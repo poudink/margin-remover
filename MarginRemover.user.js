@@ -4,27 +4,27 @@
 // @grant       GM_addStyle
 // @run-at      document-start
 // @author      poudink
-// @description Remove stupid margin.
+// @description Remove stupid margins.
 // ==/UserScript==
 GM_addStyle (`
   /*duckduckgo*/
   .cw, .cw--c {
-	  margin-left: 4em !important;
+	  margin-left: 5em !important;
   }
   .header__logo-wrap {
 	  width: unset !important;
   }
   .header__search-wrap, .content__internal {
-	  padding-right: 25em !important;
-	  padding-left: 3em !important;
+	  padding-right: 26em !important;
+	  padding-left: 4em !important;
   }
   .is-link-style-exp.is-not-mobile-device .footer_cards, .c-info, .c-base, .c-icon, .c-list, .c-product, .c-detail, .zci__main.has-aux, .zci__main--answer, .results--main, .forecast-wrapper .module--forecast .module__detail--hours__labels, .zcm-wrap--header {
 	  max-width: unset !important;
   }
   .is-vertical-tabs-exp .zcm {
-	  padding-left: 3em !important;
+	  padding-left: 4em !important;
 	  width: -moz-available !important;
-	  padding-right: 24em !important;
+	  padding-right: 25em !important;
   }
   .metabar__in, .welcome, .zcm-wrap, .zci__main, .zci__detail, .serp__results, .tile-wrap .no-results, .footer, .footer--mobile {
 	  padding-left: unset !important;
