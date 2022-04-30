@@ -162,4 +162,18 @@ GM_addStyle (`
   div:nth-child(3).di-tc.va-t{
     width: 49% !important;
   }
+  /*The Register*/
+  #aua li .body {
+    max-width: 520px !important;
+  }
+  #page {
+    width: unset !important;
+    max-width: unset !important;
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+  }
+  body:not(.timeless)[data-pagetype="Story"] #main-col #article-wrapper {
+    max-width: unset !important;
+    padding-left: 7em !important;
+  }
 ` );
