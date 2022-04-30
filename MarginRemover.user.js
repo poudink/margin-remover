@@ -42,7 +42,15 @@ GM_addStyle (`
   .container-md {
 	  max-width: unset !important;
   }
-  /*kuriblog*/
+  /*kuribo64*/
+  #container {
+    margin-left: 1em !important;
+    margin-right: 1em !important;
+    max-width: unset !important;
+  }
+  body {
+    max-width: unset !Important;
+  }
   div.maincontainer {
 	  max-width: unset !important;
 	  padding-left: 1em !important;
