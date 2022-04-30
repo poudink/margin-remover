@@ -2,7 +2,7 @@ One big web design trend that I hate is the one where websites decite to limit t
 Supports:
 <ul><li>DuckDuckGo
 <li>Github
-<li>Kuriblog
+<li>Kuribo64
 <li>MediaWiki
 <li>MyAnimeList</ul>
 
