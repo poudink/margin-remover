@@ -8,7 +8,7 @@
 // ==/UserScript==
 GM_addStyle (`
   /*duckduckgo*/
-  /*.cw, .cw--c {
+  .cw, .cw--c {
 	  margin-left: 5em !important;
   }
   .header__logo-wrap {
@@ -31,7 +31,7 @@ GM_addStyle (`
   }
   .msg--box, .msg--info, .msg--help, .msg--untranslated, .msg--warning, #error_homepage, .msg, .content__text, .header__search-wrap {
 	  max-width: unset !important;
-  }*/
+  }
   /*github*/
   .col-lg-8 {
 	  width: 84.44444444% !important;
