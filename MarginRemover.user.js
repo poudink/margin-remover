@@ -7,6 +7,19 @@
 // @description Remove stupid margins.
 // ==/UserScript==
 
+//Bugzilla
+//TODO: Matching the URL isn't good enough here, since we want this to work on every Bugzilla site. Something to figure out later.
+if (window.location.href.indexOf("https://bugs.winehq.org") > -1) {
+  GM_addStyle (`
+    .bz_comment_table {
+      width: -moz-available !important;
+    }
+    .bz_comment_text {
+      width: unset !important;
+    }
+  ` );
+}
+
 //DuckDuckGo
 //Breaks things that I am not yet knowledgeable enough to fix (I was able to fix it with inspect elements tools, but I don't know enough about userscript's HTML/CSS injection features.).
 /*if (window.location.href.indexOf("https://duckduckgo.com") > -1) {
@@ -198,6 +211,9 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     }
     body.index .widget-container .widget.reviews.left .textReadability {
       max-width: unset !important;
+    }
+    body.news .content-left {
+      width: unset !important;
     }
     div:nth-child(1).di-tc.va-t{
       width: 49% !important;
