@@ -65,7 +65,13 @@ if (window.location.href.indexOf("kuribo64.net") > -1) {
       max-width: unset !important;
     }
     body {
+      margin-left: 1em !important;
+      margin-right: 1em !important;
       max-width: unset !Important;
+    }
+    div.faq.outline.margin {
+      width: unset !important;
+      height: unset !important;
     }
     div.maincontainer {
       max-width: unset !important;
@@ -76,13 +82,24 @@ if (window.location.href.indexOf("kuribo64.net") > -1) {
 }
 
 //MediaWiki
-//Detecting the URL isn't good enough here, since we want this to work on every MediaWiki site. Something to figure out later.
-if (window.location.href.indexOf("https://wiki.archlinux.org") > -1) {
+//TODO: Matching the URL isn't good enough here, since we want this to work on every MediaWiki site. Something to figure out later.
+//TODO: Can't widen PCGamingWiki's tables.
+if (window.location.href.indexOf("wiki") > -1) {
   GM_addStyle (`
+    #masthead {
+      margin-top: 3em !important;
+      max-width: unset !important;
+    }
     .mw-article-toolbar-container {
       max-width: unset !important;
     }
     .mw-content-container {
+      max-width: unset !important;
+    }
+    .page-Home .home-information-column {
+      max-width: 31% !important;
+    }
+    .pcgw-header_limit {
       max-width: unset !important;
     }
   ` );
@@ -126,8 +143,8 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     }
     .list-container {
       width: unset !important;
-      margin-right: 1em !important;
       margin-left: 5em !important;
+      margin-right: 1em !important;
     }
     .list-unit {
       width: unset !important;
@@ -143,6 +160,8 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     }
     .page-common #myanimelist {
       width: unset !important;
+      margin-left: 1em !important;
+      margin-right: 1em !important;
     }
     .page-common .h1.edit-info {
       display: block !important;
