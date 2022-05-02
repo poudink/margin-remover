@@ -192,6 +192,53 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
   ` );
 }
 
+//Steam
+if (window.location.href.indexOf("https://steamcommunity.com") > -1) {
+  GM_addStyle (`
+    #footer .footer_content {
+      width: unset !important;
+    }
+    .apphub_Content {
+      max-width: unset !important;
+    }
+    .apphub_HomeHeader {
+      max-width: unset !important;
+    }
+    .apphub_HomeHeaderContent {
+      max-width: unset !important;
+      margin-left: 16px !important;
+      margin-right: 16px !important;
+    }
+    .forum_op {
+      background-size: cover !important;
+      max-width: unset !important;
+    }
+    .leftcol {
+      width: unset !important;
+      margin-right: 16px !important;
+    }
+    .maincontent {
+      width: unset !important;
+    }
+    div#global_header .content {
+      width: unset !important;
+    }
+    div.maincontent {
+      display: flex !important;
+    }
+
+    /* This hides a gap that appears right above the footer. The gap does not appear to be caused by Margin Remover at all, though.
+     * Not sure if it was intended to appear. Surely not, right? Either way, it's technically a margin and it's ugly as hell.*/
+    .pagecontent {
+      padding-bottom: unset !important;
+    }
+    body.flat_page #footer_spacer, body.headerless_page #footer_spacer {
+      height: unset !important;
+      padding-top: unset !important;
+    }
+  ` );
+}
+
 //The Register
 if (window.location.href.indexOf("theregister.com") > -1) {
   GM_addStyle (`
