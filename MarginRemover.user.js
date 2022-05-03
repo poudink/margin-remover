@@ -228,7 +228,14 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
 }
 
 //Steam
-if (window.location.href.indexOf("https://steamcommunity.com") > -1) {
+/* TODO: Steam has multiple domains, inculding steamcommunity.com and store.steampowered.com.
+ * I know it sounds ridiculous, but I literally have no idea how to let this thing accept multiple domains without pointlessly duplicating the code.
+ * Looked up the OR operator, which is apparently ||. Tried using it multiple ways, didn't work.
+ * Thankfully, this doesn't matter yet since the filter only works right on steamcommunity.com.
+ * TODO: Make this work better on store.steampowered.com. This has a partial implementation, but it's going to need a lot more work.
+ * May redo it from scratch, I have my doubts about the current approach.
+ * Due to the issues, this is currently disabled by default outside of steamcommunity.com.*/
+if (window.location.href.indexOf("steam") > -1) {
   GM_addStyle (`
     #footer .footer_content {
       width: unset !important;
@@ -255,11 +262,33 @@ if (window.location.href.indexOf("https://steamcommunity.com") > -1) {
     .maincontent {
       width: unset !important;
     }
+    .queue_ctn {
+      margin-left: 16px !important;
+      margin-right: 16px !important;
+      width: unset !important;
+    }
+    .review_box .rightcol {
+      width: -moz-available !important;
+    }
+    body.v6 .page_content {
+      margin-left: 16px !important;
+      margin-right: 16px !important;
+      width: unset !important;
+    }
     div#global_header .content {
       width: unset !important;
     }
+    div#nextInDiscoveryQueue.next_in_queue_area {
+      margin-right: 32px !important;
+    }
+    div.leftcol {
+      float: unset !important;
+    }
     div.maincontent {
       display: flex !important;
+    }
+    div.page_content {
+      width: unset !important;
     }
 
     /* This hides a gap that appears right above the footer. The gap does not appear to be caused by Margin Remover at all, though.
