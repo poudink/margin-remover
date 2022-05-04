@@ -125,8 +125,8 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
       width: 100% !important;
     }
     .anime-slide.js-anime-slide{
-      width: unset !important;
       text-align: center !important;
+      width: unset !important;
     }
     .anime-slide-block {
       width: unset !important;
@@ -137,6 +137,10 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     .anime-slide-outer {
       width: unset !important;
     }
+    .btn-favmore {
+      background-position: 50% 12px !important;
+      width: unset !important;
+    }
     .detail-stack-block .column-item {
       width: 32% !important;
     }
@@ -144,9 +148,9 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
       width: unset !important;
     }
     .header {
-      width: unset !important;
       margin-left: 1em !important;
       margin-right: 1em !important;
+      width: unset !important;
     }
     .left-column.fl-l.divider{
       width: 49% !important;
@@ -155,9 +159,9 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
       width: 49% !important;
     }
     .list-container {
-      width: unset !important;
       margin-left: 5em !important;
       margin-right: 1em !important;
+      width: unset !important;
     }
     .list-unit {
       width: unset !important;
@@ -172,9 +176,9 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
       width: unset !important;
     }
     .page-common #myanimelist {
-      width: unset !important;
       margin-left: 1em !important;
       margin-right: 1em !important;
+      width: unset !important;
     }
     .page-common .h1.edit-info {
       display: block !important;
@@ -185,6 +189,9 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     }
     .page-common .h1.edit-info span.h1-title, .page-common .h1.edit-info div.h1-title {
       display: inline-block !important;
+      width: unset !important;
+    }
+    .profile .user-profile-about {
       width: unset !important;
     }
     .ranking-digest .ranking-unit {
@@ -206,8 +213,8 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
       width: 100% !important;
     }
     .widget.mxj .widget-content a {
-      width: 37% !important;
       margin-right: 0px !important;
+      width: 37% !important;
     }
     body.index .widget-container .widget.reviews.left .textReadability {
       max-width: unset !important;
@@ -223,6 +230,9 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     }
     div:nth-child(3).di-tc.va-t{
       width: 49% !important;
+    }
+    textarea.textarea{
+      width: 99% !important;
     }
   ` );
 }
