@@ -240,6 +240,9 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     div:nth-child(3).di-tc.va-t{
       width: 49% !important;
     }
+    td.borderClass div{
+      width: unset !important;
+    }
     textarea.textarea{
       width: 99% !important;
     }
