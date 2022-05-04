@@ -222,9 +222,9 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     body.news .content-left {
       width: unset !important;
     }
-    div#myanimelist div.wrapper div#contentWrapper div#content div{
+ /*   div#myanimelist div.wrapper div#contentWrapper div#content div{
       width: unset !important;
-    }
+    }*/
     div.wrapper div#contentWrapper div#content table#dialog{
       width: 100% !important;
     }
