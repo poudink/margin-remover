@@ -213,6 +213,9 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     .news-list .comment-list, .news-list .news-unit {
       width: unset !important;
     }
+    .page-advertising #ad_menu {
+      width: unset !important;
+    }
     .page-common #menu {
       width: unset !important;
     }
@@ -243,6 +246,9 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     }
     .ranking-digest .ranking-unit .title {
       width: unset !important;
+    }
+    .recommendations-user-recs-text {
+      max-width: unset !important
     }
     .status-menu-container {
       width: 100% !important;
@@ -283,6 +289,10 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     }
     div:nth-child(3).di-tc.va-t{
       width: 49% !important;
+    }
+    img.lazyloaded:nth-child(3){
+      width: -moz-available !important;
+      height: auto !important;
     }
     td.borderClass div{
       width: unset !important;
