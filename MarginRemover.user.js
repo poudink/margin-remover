@@ -66,6 +66,9 @@ if (window.location.href.indexOf("https://github.com") > -1) {
     .container-md {
       max-width: unset !important;
     }
+    .container-xl {
+      max-width: unset !important;
+    }
   ` );
 }
 
