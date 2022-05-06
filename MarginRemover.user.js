@@ -54,6 +54,37 @@ if (window.location.href.indexOf("https://bugs.winehq.org") > -1) {
   ` );
 }*/
 
+//freeCodeCamp
+if (window.location.href.indexOf("https://www.freecodecamp.org") > -1) {
+  GM_addStyle (`
+    .footer-container {
+      width: unset !important;
+    }
+    .inner {
+      max-width: unset !important;
+    }
+    .post-content {
+      max-width: unset !important;
+      width: 92vw !important;
+    }
+    .post-full-header {
+      max-width: unset !important;
+    }
+  ` );
+}
+
+//Gitea
+//TODO: Matching the URL isn't good enough here, since we want this to work on every Gitea site. Something to figure out later.
+if (window.location.href.indexOf("https://johncena141.eu.org") > -1) {
+  GM_addStyle (`
+    .ui.ui.ui.container:not(.fluid) {
+      margin-left: 2em !important;
+      margin-right: 2em !important;
+      width: unset;
+    }
+  ` );
+}
+
 //GitHub
 if (window.location.href.indexOf("https://github.com") > -1) {
   GM_addStyle (`
@@ -68,6 +99,26 @@ if (window.location.href.indexOf("https://github.com") > -1) {
     }
     .container-xl {
       max-width: unset !important;
+    }
+  ` );
+}
+
+//Gogs
+//TODO: Matching the URL isn't good enough here, since we want this to work on every Gogs site. Something to figure out later.
+if (window.location.href.indexOf("https://notabug.org") > -1) {
+  GM_addStyle (`
+    .ui.secondary.menu {
+      margin-right: 7px !important;
+    }
+    div#header-div.following.bar.light div.ui.container {
+      margin-left: 1em !important;
+      margin-right: 1em !important;
+      width: unset !important;
+    }
+    div.repository.file.list div.ui.container {
+      margin-left: 1em !important;
+      margin-right: 1em !important;
+      width: unset !important;
     }
   ` );
 }
@@ -308,6 +359,15 @@ if (window.location.href.indexOf("https://pkgs.org/") > -1) {
   GM_addStyle (`
     .container, .container-lg, .container-md, .container-sm, .container-xl {
       max-width: unset !important;
+    }
+  ` );
+}
+
+//rentry
+if (window.location.href.indexOf("https://rentry.co") > -1) {
+  GM_addStyle (`
+    div.container.container-smooth {
+      width: unset !important;
     }
   ` );
 }
