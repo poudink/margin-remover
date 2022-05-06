@@ -123,6 +123,30 @@ if (window.location.href.indexOf("https://notabug.org") > -1) {
   ` );
 }
 
+//itch.io
+if (window.location.href.indexOf("itch.io") > -1) {
+  GM_addStyle (`
+    .above_game_banner_inner, .goal_banner_inner {
+      max-width: unset !important;
+    }
+    .community_post_list_widget .community_post .post_body {
+      max-width: unset !important;
+    }
+    .game_comments_widget .post_form {
+      max-width: unset !important;
+    }
+    .responsive .inner_column {
+      max-width: unset !important;
+      margin-left: 1rem !important;
+      margin-right: 1rem !important;
+    }
+    div.purchase_banner.above_game_banner{
+      margin-left: 1rem !important;
+      margin-right: 1rem !important;
+    }
+  ` );
+}
+
 //Kuribo64
 if (window.location.href.indexOf("kuribo64.net") > -1) {
   GM_addStyle (`
@@ -149,8 +173,8 @@ if (window.location.href.indexOf("kuribo64.net") > -1) {
 }
 
 //MediaWiki
-//TODO: Matching the URL isn't good enough here, since we want this to work on every MediaWiki site. Something to figure out later.
-//TODO: Can't widen PCGamingWiki's tables.
+/*TODO: Matching the URL isn't good enough here, since we want this to work on every MediaWiki site. Something to figure out later.
+ * TODO: Can't widen PCGamingWiki's tables.*/
 if (window.location.href.indexOf("wiki") > -1) {
   GM_addStyle (`
     #masthead {
@@ -463,6 +487,18 @@ if (window.location.href.indexOf("theregister.com") > -1) {
     body:not(.timeless)[data-pagetype="Story"] #main-col #article-wrapper {
       max-width: unset !important;
       padding-left: 7em !important;
+    }
+  ` );
+}
+
+//Violentmonkey
+if (window.location.href.indexOf("https://violentmonkey.github.io") > -1) {
+  GM_addStyle (`
+    .sidebar {
+      width: unset !important;
+    }
+    main {
+      max-width: unset !important;
     }
   ` );
 }
