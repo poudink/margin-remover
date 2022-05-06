@@ -150,6 +150,41 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     .detail-stack-block .column-item .detail {
       width: unset !important;
     }
+    .forum .content-container .container-left {
+      padding-right: 10px !important;
+      width: unset !important;
+    }
+    .forum .forum-board .board {
+      width: 55% !important;
+    }
+    .forum .forum-board .topics {
+      width: 45% !important;
+    }
+    .forum .forum-board .topics .topic-title {
+      width: unset !important;
+    }
+    .forum .forum-board .topics .topic-title .topic-title-link {
+      white-space: unset !important;
+    }
+    .forum .forum-board-list {
+      width: unset !important;
+    }
+    .forum .forum-mods .link-forum-mods:first-of-type {
+      padding-left: 12px !important;
+    }
+    .forum .forum-mods .link-forum-mods:nth-of-type(10n) {
+      padding-right: 12px !important;
+    }
+    .forum .forum-mods-container {
+      display: block ruby !important;
+      width: unset !important;
+    }
+    .forum .forum-mods-list {
+      width: unset !important
+    }
+    .forum .forum-side-block .forum-side-list .forum-post .information-block {
+      width: unset !important;
+    }
     .header {
       margin-left: 1em !important;
       margin-right: 1em !important;
@@ -184,6 +219,9 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     .page-common #myanimelist {
       margin-left: 1em !important;
       margin-right: 1em !important;
+      width: unset !important;
+    }
+    .page-common .content-container .container-left {
       width: unset !important;
     }
     .page-common .h1.edit-info {
@@ -231,6 +269,9 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     body.page-forum.page-common div#myanimelist div.wrapper div#contentWrapper div#content div{
       width: unset !important;
     }
+    div.forum-board{
+      width: -moz-available !important;
+    }
     div.wrapper div#contentWrapper div#content table#dialog{
       width: 100% !important;
     }
@@ -248,6 +289,15 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     }
     textarea.textarea{
       width: 99% !important;
+    }
+  ` );
+}
+
+//pkgs.org
+if (window.location.href.indexOf("https://pkgs.org/") > -1) {
+  GM_addStyle (`
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+      max-width: unset !important;
     }
   ` );
 }
