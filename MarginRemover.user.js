@@ -20,6 +20,15 @@ if (window.location.href.indexOf("https://bugs.winehq.org") > -1) {
   ` );
 }
 
+//Dolphin Emulator
+if (window.location.href.indexOf("https://dolphin-emu.org/") > -1) {
+  GM_addStyle (`
+    .container {
+      width: unset !important;
+    }
+  ` );
+}
+
 //DuckDuckGo
 //Breaks things that I am not yet knowledgeable enough to fix (I was able to fix it with inspect elements tools, but I don't know enough about userscript's HTML/CSS injection features.).
 /*if (window.location.href.indexOf("https://duckduckgo.com") > -1) {
@@ -74,16 +83,18 @@ if (window.location.href.indexOf("https://www.freecodecamp.org") > -1) {
 }
 
 //Gitea
-//TODO: Matching the URL isn't good enough here, since we want this to work on every Gitea site. Something to figure out later.
-if (window.location.href.indexOf("https://johncena141.eu.org") > -1) {
-  GM_addStyle (`
-    .ui.ui.ui.container:not(.fluid) {
-      margin-left: 2em !important;
-      margin-right: 2em !important;
-      width: unset;
-    }
-  ` );
-}
+/* TODO: Matching the URL isn't good enough here, since we want this to work on every Gitea site. Something to figure out later.
+ * Right now, the filter is always active. Hopefully it won't cause any problems.*/
+GM_addStyle (`
+  .following.bar #navbar {
+    width: 100vw !important;
+  }
+  .ui.ui.ui.container:not(.fluid) {
+    margin-left: 2em !important;
+    margin-right: 2em !important;
+    width: unset !important;
+  }
+` );
 
 //GitHub
 if (window.location.href.indexOf("https://github.com") > -1) {
@@ -404,7 +415,7 @@ if (window.location.href.indexOf("https://rentry.co") > -1) {
  * TODO: Make this work better on store.steampowered.com. This has a partial implementation, but it's going to need a lot more work.
  * May redo it from scratch, I have my doubts about the current approach.
  * Due to the issues, this is currently disabled by default outside of steamcommunity.com.*/
-if (window.location.href.indexOf("steam") > -1) {
+if (window.location.href.indexOf("https://steamcommunity.com") > -1) {
   GM_addStyle (`
     #footer .footer_content {
       width: unset !important;
