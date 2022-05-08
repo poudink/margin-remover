@@ -20,6 +20,18 @@ if (window.location.href.indexOf("https://bugs.winehq.org") > -1) {
   ` );
 }
 
+//Crunchyroll (Beta)
+/* Limited to beta to avoid any potential breakage with the regular layout.
+ * Could work fine with it for all I know (very unlikely), but I don't use it so I don't know.
+ * TODO: Headerbar (margin isn't visible on my screen so low priority). */
+if (window.location.href.indexOf("https://beta.crunchyroll.com") > -1) {
+  GM_addStyle (`
+    .c-content-wrapper {
+      --content-width: unset !important;
+    }
+  ` );
+}
+
 //Dolphin Emulator
 if (window.location.href.indexOf("https://dolphin-emu.org/") > -1) {
   GM_addStyle (`
@@ -84,7 +96,7 @@ if (window.location.href.indexOf("https://www.freecodecamp.org") > -1) {
 
 //Gitea
 /* TODO: Matching the URL isn't good enough here, since we want this to work on every Gitea site. Something to figure out later.
- * Right now, the filter is always active. Hopefully it won't cause any problems.*/
+ * Right now, the filter is always active. Hopefully it won't cause any problems. */
 GM_addStyle (`
   .following.bar #navbar {
     width: 100vw !important;
@@ -184,8 +196,8 @@ if (window.location.href.indexOf("kuribo64.net") > -1) {
 }
 
 //MediaWiki
-/*TODO: Matching the URL isn't good enough here, since we want this to work on every MediaWiki site. Something to figure out later.
- * TODO: Can't widen PCGamingWiki's tables.*/
+/* TODO: Matching the URL isn't good enough here, since we want this to work on every MediaWiki site. Something to figure out later.
+ * TODO: Can't widen PCGamingWiki's tables. */
 if (window.location.href.indexOf("wiki") > -1) {
   GM_addStyle (`
     #masthead {
@@ -414,7 +426,7 @@ if (window.location.href.indexOf("https://rentry.co") > -1) {
  * Thankfully, this doesn't matter yet since the filter only works right on steamcommunity.com.
  * TODO: Make this work better on store.steampowered.com. This has a partial implementation, but it's going to need a lot more work.
  * May redo it from scratch, I have my doubts about the current approach.
- * Due to the issues, this is currently disabled by default outside of steamcommunity.com.*/
+ * Due to the issues, this is currently disabled by default outside of steamcommunity.com. */
 if (window.location.href.indexOf("https://steamcommunity.com") > -1) {
   GM_addStyle (`
     #footer .footer_content {
