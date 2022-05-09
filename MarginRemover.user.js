@@ -23,7 +23,8 @@ if (window.location.href.indexOf("https://bugs.winehq.org") > -1) {
 //Crunchyroll (Beta)
 /* Limited to beta to avoid any potential breakage with the regular layout.
  * Could work fine with it for all I know (very unlikely), but I don't use it so I don't know.
- * TODO: Headerbar (margin isn't visible on my screen so low priority). */
+ * TODO: Headerbar (margin isn't visible on my screen so low priority).
+ * TODO: Comment section. */
 if (window.location.href.indexOf("https://beta.crunchyroll.com") > -1) {
   GM_addStyle (`
     .c-content-wrapper {
@@ -163,7 +164,7 @@ if (window.location.href.indexOf("itch.io") > -1) {
       margin-left: 1rem !important;
       margin-right: 1rem !important;
     }
-    div.purchase_banner.above_game_banner{
+    div.purchase_banner.above_game_banner {
       margin-left: 1rem !important;
       margin-right: 1rem !important;
     }
@@ -225,7 +226,7 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     #widget-episode-video {
       width: 100% !important;
     }
-    .anime-slide.js-anime-slide{
+    .anime-slide.js-anime-slide {
       text-align: center !important;
       width: unset !important;
     }
@@ -291,7 +292,7 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     .left-column.fl-l.divider{
       width: 49% !important;
     }
-    .left-right.fl-r{
+    .left-right.fl-r {
       width: 49% !important;
     }
     .list-container {
@@ -370,32 +371,32 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     body.news .content-left {
       width: unset !important;
     }
-    body.page-forum.page-common div#myanimelist div.wrapper div#contentWrapper div#content div{
+    body.page-forum.page-common div#myanimelist div.wrapper div#contentWrapper div#content div {
       width: unset !important;
     }
-    div.forum-board{
+    div.forum-board {
       width: -moz-available !important;
     }
-    div.wrapper div#contentWrapper div#content table#dialog{
+    div.wrapper div#contentWrapper div#content table#dialog {
       width: 100% !important;
     }
-    div:nth-child(1).di-tc.va-t{
+    div:nth-child(1).di-tc.va-t {
       width: 49% !important;
     }
-    div:nth-child(2).di-tc.va-t{
+    div:nth-child(2).di-tc.va-t {
       width: 2% !important;
     }
-    div:nth-child(3).di-tc.va-t{
+    div:nth-child(3).di-tc.va-t {
       width: 49% !important;
     }
-    img.lazyloaded:nth-child(3){
+    img.lazyloaded:nth-child(3) {
       width: -moz-available !important;
       height: auto !important;
     }
-    td.borderClass div{
+    td.borderClass div {
       width: unset !important;
     }
-    textarea.textarea{
+    textarea.textarea {
       width: 99% !important;
     }
   ` );
@@ -424,6 +425,8 @@ if (window.location.href.indexOf("https://rentry.co") > -1) {
  * I know it sounds ridiculous, but I literally have no idea how to let this thing accept multiple domains without pointlessly duplicating the code.
  * Looked up the OR operator, which is apparently ||. Tried using it multiple ways, didn't work.
  * Thankfully, this doesn't matter yet since the filter only works right on steamcommunity.com.
+ * When this does start mattering, just matching "steam" will work, but not ideal since it'll also get actived on sites like "steamunlocked.net".
+ * Hopefully I'll have figured out something better by then.
  * TODO: Make this work better on store.steampowered.com. This has a partial implementation, but it's going to need a lot more work.
  * May redo it from scratch, I have my doubts about the current approach.
  * Due to the issues, this is currently disabled by default outside of steamcommunity.com. */
