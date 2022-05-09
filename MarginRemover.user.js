@@ -109,6 +109,25 @@ GM_addStyle (`
   }
 ` );
 
+//GitLab
+//TODO: Matching the URL isn't good enough here, since we want this to work on every GitLab site. Something to figure out later.
+if (window.location.href.indexOf("https://invent.kde.org") > -1) {
+  GM_addStyle (`
+    .container-fluid.container-limited.limit-container-width .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width.container-sm .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width.container-md .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width.container-lg .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width.container-xl .file-holder.readme-holder.limited-width-container .file-content {
+      max-width: unset !important;
+    }
+    .container-limited.limit-container-width {
+      max-width: unset !important;
+    }
+    .content-wrapper {
+      padding-bottom: unset !important;
+    }
+    .limit-container-width .flash-container, .limit-container-width .detail-page-header, .limit-container-width .page-content-header, .limit-container-width .commit-box, .limit-container-width .info-well, .limit-container-width .commit-ci-menu, .limit-container-width .files-changed-inner, .limit-container-width .limited-header-width, .limit-container-width .limited-width-notes {
+      max-width: unset !important;
+    }
+  ` );
+}
+
 //GitHub
 if (window.location.href.indexOf("https://github.com") > -1) {
   GM_addStyle (`
@@ -171,6 +190,19 @@ if (window.location.href.indexOf("itch.io") > -1) {
   ` );
 }
 
+//KDE
+if (window.location.href.indexOf("kde.org") > -1) {
+  GM_addStyle (`
+    .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: unset !important;
+    }
+    div.container.my-4.p-0 {
+      padding-left: 3rem !important;
+      padding-right: 1rem !important;
+    }
+  ` );
+}
+
 //Kuribo64
 if (window.location.href.indexOf("kuribo64.net") > -1) {
   GM_addStyle (`
@@ -192,6 +224,24 @@ if (window.location.href.indexOf("kuribo64.net") > -1) {
       max-width: unset !important;
       padding-left: 1em !important;
       padding-right: 1em !important;
+    }
+  ` );
+}
+
+//Linuxize
+if (window.location.href.indexOf("https://linuxize.com") > -1) {
+  GM_addStyle (`
+    .max-w-article {
+      max-width: unset !important;
+    }
+    .max-w-3xl {
+      max-width: unset !important;
+    }
+    .max-w-5xl {
+      max-width: unset !important;
+    }
+    div.w-full.post-width.mx-auto.px-6 {
+      max-width: unset !important;
     }
   ` );
 }
