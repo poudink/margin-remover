@@ -528,3 +528,18 @@ if (window.location.href.indexOf("https://violentmonkey.github.io") > -1) {
     }
   ` );
 }
+
+//WordPress
+/* TODO: Matching the URL isn't good enough here, since we want this to work on every WordPress site. Or do we?
+ * Depending on how customizable WordPress is, a case-by-case approach for every site may be necessary.
+ * Something to figure out whenever I stumble upon another WordPress site.*/
+if (window.location.href.indexOf("https://pointieststick.com") > -1) {
+  GM_addStyle (`
+    .content-wrapper {
+      max-width: unset !important;
+    }
+    .has-sidebar .site-main {
+      max-width: unset !important;
+    }
+  ` );
+}
