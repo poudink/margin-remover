@@ -15,6 +15,7 @@ if (window.location.href.indexOf("https://bugs.winehq.org") > -1) {
       width: -moz-available !important;
     }
     .bz_comment_text {
+      max-width: 85vw !important;
       width: unset !important;
     }
   ` );
@@ -56,16 +57,16 @@ if (window.location.href.indexOf("https://dolphin-emu.org/") > -1) {
       width: unset !important;
     }
     .header__search-wrap, .content__internal {
-      padding-right: 26em !important;
       padding-left: 4em !important;
+      padding-right: 26em !important;
     }
     .is-link-style-exp.is-not-mobile-device .footer_cards, .c-info, .c-base, .c-icon, .c-list, .c-product, .c-detail, .zci__main.has-aux, .zci__main--answer, .results--main, .forecast-wrapper .module--forecast .module__detail--hours__labels, .zcm-wrap--header {
       max-width: unset !important;
     }
     .is-vertical-tabs-exp .zcm {
       padding-left: 4em !important;
-      width: -moz-available !important;
       padding-right: 25em !important;
+      width: -moz-available !important;
     }
     .metabar__in, .welcome, .zcm-wrap, .zci__main, .zci__detail, .serp__results, .tile-wrap .no-results, .footer, .footer--mobile {
       padding-left: unset !important;
@@ -110,23 +111,22 @@ GM_addStyle (`
 ` );
 
 //GitLab
-//TODO: Matching the URL isn't good enough here, since we want this to work on every GitLab site. Something to figure out later.
-if (window.location.href.indexOf("https://invent.kde.org") > -1) {
-  GM_addStyle (`
-    .container-fluid.container-limited.limit-container-width .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width.container-sm .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width.container-md .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width.container-lg .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width.container-xl .file-holder.readme-holder.limited-width-container .file-content {
-      max-width: unset !important;
-    }
-    .container-limited.limit-container-width {
-      max-width: unset !important;
-    }
-    .content-wrapper {
-      padding-bottom: unset !important;
-    }
-    .limit-container-width .flash-container, .limit-container-width .detail-page-header, .limit-container-width .page-content-header, .limit-container-width .commit-box, .limit-container-width .info-well, .limit-container-width .commit-ci-menu, .limit-container-width .files-changed-inner, .limit-container-width .limited-header-width, .limit-container-width .limited-width-notes {
-      max-width: unset !important;
-    }
-  ` );
-}
+/* TODO: Matching the URL isn't good enough here, since we want this to work on every Gitea site. Something to figure out later.
+ * Right now, the filter is always active. Hopefully it won't cause any problems. */
+GM_addStyle (`
+  .container-fluid.container-limited.limit-container-width .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width.container-sm .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width.container-md .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width.container-lg .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width.container-xl .file-holder.readme-holder.limited-width-container .file-content {
+    max-width: unset !important;
+  }
+  .container-limited.limit-container-width {
+    max-width: unset !important;
+  }
+  .content-wrapper {
+    padding-bottom: unset !important;
+  }
+  .limit-container-width .flash-container, .limit-container-width .detail-page-header, .limit-container-width .page-content-header, .limit-container-width .commit-box, .limit-container-width .info-well, .limit-container-width .commit-ci-menu, .limit-container-width .files-changed-inner, .limit-container-width .limited-header-width, .limit-container-width .limited-width-notes {
+    max-width: unset !important;
+  }
+` );
 
 //GitHub
 if (window.location.href.indexOf("https://github.com") > -1) {
@@ -141,6 +141,15 @@ if (window.location.href.indexOf("https://github.com") > -1) {
       max-width: unset !important;
     }
     .container-xl {
+      max-width: unset !important;
+    }
+  ` );
+}
+
+//GloriousEggroll's Blog
+if (window.location.href.indexOf("https://www.gloriouseggroll.tv") > -1) {
+  GM_addStyle (`
+    .grid-container {
       max-width: unset !important;
     }
   ` );
@@ -166,6 +175,16 @@ if (window.location.href.indexOf("https://notabug.org") > -1) {
   ` );
 }
 
+//Internet Archive
+//TODO: Exclude archive pages.
+if (window.location.href.indexOf("https://archive.org") > -1) {
+  GM_addStyle (`
+    .container {
+      max-width: unset !important;
+    }
+  ` );
+}
+
 //itch.io
 if (window.location.href.indexOf("itch.io") > -1) {
   GM_addStyle (`
@@ -179,9 +198,9 @@ if (window.location.href.indexOf("itch.io") > -1) {
       max-width: unset !important;
     }
     .responsive .inner_column {
-      max-width: unset !important;
       margin-left: 1rem !important;
       margin-right: 1rem !important;
+      max-width: unset !important;
     }
     div.purchase_banner.above_game_banner {
       margin-left: 1rem !important;
@@ -217,13 +236,28 @@ if (window.location.href.indexOf("kuribo64.net") > -1) {
       max-width: unset !Important;
     }
     div.faq.outline.margin {
-      width: unset !important;
       height: unset !important;
+      width: unset !important;
     }
     div.maincontainer {
       max-width: unset !important;
       padding-left: 1em !important;
       padding-right: 1em !important;
+    }
+  ` );
+}
+
+//Lightspark
+if (window.location.href.indexOf("http://lightspark.github.io") > -1) {
+  GM_addStyle (`
+    .container {
+      margin-left: 2em !important;
+      margin-right: 2em !important;
+      max-width: unset !important;
+    }
+    .content .span10, .content .span4 {
+      max-width: unset !important;
+      min-height: unset !important;
     }
   ` );
 }
@@ -492,17 +526,17 @@ if (window.location.href.indexOf("https://steamcommunity.com") > -1) {
       max-width: unset !important;
     }
     .apphub_HomeHeaderContent {
-      max-width: unset !important;
       margin-left: 16px !important;
       margin-right: 16px !important;
+      max-width: unset !important;
     }
     .forum_op {
       background-size: cover !important;
       max-width: unset !important;
     }
     .leftcol {
-      width: unset !important;
       margin-right: 16px !important;
+      width: unset !important;
     }
     .maincontent {
       width: unset !important;
@@ -555,10 +589,10 @@ if (window.location.href.indexOf("theregister.com") > -1) {
       max-width: 520px !important;
     }
     #page {
-      width: unset !important;
       max-width: unset !important;
       padding-left: 1em !important;
       padding-right: 1em !important;
+      width: unset !important;
     }
     body:not(.timeless)[data-pagetype="Story"] #main-col #article-wrapper {
       max-width: unset !important;
@@ -575,6 +609,15 @@ if (window.location.href.indexOf("https://violentmonkey.github.io") > -1) {
     }
     main {
       max-width: unset !important;
+    }
+  ` );
+}
+
+//W3Techs
+if (window.location.href.indexOf("https://w3techs.com") > -1) {
+  GM_addStyle (`
+    td.tech_main {
+      width: unset !important;
     }
   ` );
 }
