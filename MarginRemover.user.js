@@ -44,7 +44,8 @@ if (window.location.href.indexOf("https://dolphin-emu.org/") > -1) {
 }
 
 //DuckDuckGo
-//Breaks things that I am not yet knowledgeable enough to fix (I was able to fix it with inspect elements tools, but I don't know enough about userscript's HTML/CSS injection features.).
+/* Breaks things that I am not yet knowledgeable enough to fix.
+ * I was able to fix it with inspect elements tools, but I don't know enough about userscript's HTML/CSS injection features.*/
 /*if (window.location.href.indexOf("https://duckduckgo.com") > -1) {
   GM_addStyle (`
     .cw, .cw--c {
@@ -76,6 +77,18 @@ if (window.location.href.indexOf("https://dolphin-emu.org/") > -1) {
     }
   ` );
 }*/
+
+//Epic Games Store
+if (window.location.href.indexOf("https://store.epicgames.com") > -1) {
+  GM_addStyle (`
+    .css-s45c7f {
+      max-width: unset !important;
+    }
+    .css-vomfqg {
+      max-width: unset !important;
+    }
+  ` );
+}
 
 //freeCodeCamp
 if (window.location.href.indexOf("https://www.freecodecamp.org") > -1) {
@@ -275,6 +288,15 @@ if (window.location.href.indexOf("https://linuxize.com") > -1) {
       max-width: unset !important;
     }
     div.w-full.post-width.mx-auto.px-6 {
+      max-width: unset !important;
+    }
+  ` );
+}
+
+//LinuxStoney
+if (window.location.href.indexOf("https://linuxstoney.com") > -1) {
+  GM_addStyle (`
+    .mh-container, .mh-container-inner {
       max-width: unset !important;
     }
   ` );
@@ -486,6 +508,15 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
   ` );
 }
 
+//PCSX2
+if (window.location.href.indexOf("https://pcsx2.net") > -1) {
+  GM_addStyle (`
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+      max-width: unset !important;
+    }
+  ` );
+}
+
 //pkgs.org
 if (window.location.href.indexOf("https://pkgs.org/") > -1) {
   GM_addStyle (`
@@ -500,6 +531,20 @@ if (window.location.href.indexOf("https://rentry.co") > -1) {
   GM_addStyle (`
     div.container.container-smooth {
       width: unset !important;
+    }
+  ` );
+}
+
+//RPG Maker
+/* TODO: Detect RPG Maker and only activate this when necessary.
+ * Right now this is simply set to activate for local files, which's useful when games don't bother shipping with Linux binaries for some reason.
+ * Like come on it's literally no effort to get modern RPG Maker games on Linux (and old ones too with EasyRPG and MKXP, but that's all off-topic).
+ * Oh well, this won't activate for any instance of web-based RPG Maker being actually embedded on a web page. I've never seen that, though.*/
+if (window.location.href.indexOf("file://") > -1) {
+  GM_addStyle (`
+    #GameCanvas {
+      height: 100vh !important;
+      width: auto !important;
     }
   ` );
 }
