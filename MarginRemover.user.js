@@ -7,6 +7,15 @@
 // @description Remove stupid margins.
 // ==/UserScript==
 
+//Adventures in Linux and KDE
+if (window.location.href.indexOf("https://pointieststick.com") > -1) {
+  GM_addStyle (`
+    .content-wrapper, .has-sidebar .site-main {
+      max-width: unset !important;
+    }
+  ` );
+}
+
 //Bugzilla
 //TODO: Matching the URL isn't good enough here, since we want this to work on every Bugzilla site. Something to figure out later.
 if (window.location.href.indexOf("https://bugs.winehq.org") > -1) {
@@ -43,48 +52,10 @@ if (window.location.href.indexOf("https://dolphin-emu.org/") > -1) {
   ` );
 }
 
-//DuckDuckGo
-/* Breaks things that I am not yet knowledgeable enough to fix.
- * I was able to fix it with inspect elements tools, but I don't know enough about userscript's HTML/CSS injection features.*/
-/*if (window.location.href.indexOf("https://duckduckgo.com") > -1) {
-  GM_addStyle (`
-    .cw, .cw--c {
-      margin-left: 5em !important;
-    }
-    .footer__left {
-      width: 81% !important;
-    }
-    .header__logo-wrap {
-      width: unset !important;
-    }
-    .header__search-wrap, .content__internal {
-      padding-left: 4em !important;
-      padding-right: 26em !important;
-    }
-    .is-link-style-exp.is-not-mobile-device .footer_cards, .c-info, .c-base, .c-icon, .c-list, .c-product, .c-detail, .zci__main.has-aux, .zci__main--answer, .results--main, .forecast-wrapper .module--forecast .module__detail--hours__labels, .zcm-wrap--header {
-      max-width: unset !important;
-    }
-    .is-vertical-tabs-exp .zcm {
-      padding-left: 4em !important;
-      padding-right: 25em !important;
-      width: -moz-available !important;
-    }
-    .metabar__in, .welcome, .zcm-wrap, .zci__main, .zci__detail, .serp__results, .tile-wrap .no-results, .footer, .footer--mobile {
-      padding-left: unset !important;
-    }
-    .msg--box, .msg--info, .msg--help, .msg--untranslated, .msg--warning, #error_homepage, .msg, .content__text, .header__search-wrap {
-      max-width: unset !important;
-    }
-  ` );
-}*/
-
 //Epic Games Store
 if (window.location.href.indexOf("https://store.epicgames.com") > -1) {
   GM_addStyle (`
-    .css-s45c7f {
-      max-width: unset !important;
-    }
-    .css-vomfqg {
+    .css-s45c7f, .css-vomfqg {
       max-width: unset !important;
     }
   ` );
@@ -96,14 +67,21 @@ if (window.location.href.indexOf("https://www.freecodecamp.org") > -1) {
     .footer-container {
       width: unset !important;
     }
-    .inner {
+    .inner, .post-full-header {
       max-width: unset !important;
     }
     .post-content {
       max-width: unset !important;
       width: 92vw !important;
     }
-    .post-full-header {
+  ` );
+}
+
+//GIMP
+//TODO: This filter literally doesn't do anything. I have no idea why. It should work, but it doesn't.
+if (window.location.href.indexOf("https://www.gimp.org") > -1) {
+  GM_addStyle (`
+    .container, .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, .entry-content ol, .entry-content p, .entry-content ul, .page_content h1, .page_content h2, .page_content h3, .page_content h4, .page_content h5, .page_content h6, .page_content ol, .page_content p, .page_content ul {
       max-width: unset !important;
     }
   ` );
@@ -127,17 +105,14 @@ GM_addStyle (`
 /* TODO: Matching the URL isn't good enough here, since we want this to work on every Gitea site. Something to figure out later.
  * Right now, the filter is always active. Hopefully it won't cause any problems. */
 GM_addStyle (`
-  .container-fluid.container-limited.limit-container-width .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width.container-sm .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width.container-md .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width.container-lg .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width.container-xl .file-holder.readme-holder.limited-width-container .file-content {
-    max-width: unset !important;
-  }
-  .container-limited.limit-container-width {
+  .container-fluid.container-limited.limit-container-width .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width, .limit-container-width .commit-box, .limit-container-width .commit-ci-menu, .limit-container-width .detail-page-header, .limit-container-width .files-changed-inner, .limit-container-width .flash-container, .limit-container-width .info-well, .limit-container-width .limited-header-width, .limit-container-width .limited-width-notes, .limit-container-width .page-content-header {
     max-width: unset !important;
   }
   .content-wrapper {
     padding-bottom: unset !important;
   }
-  .limit-container-width .flash-container, .limit-container-width .detail-page-header, .limit-container-width .page-content-header, .limit-container-width .commit-box, .limit-container-width .info-well, .limit-container-width .commit-ci-menu, .limit-container-width .files-changed-inner, .limit-container-width .limited-header-width, .limit-container-width .limited-width-notes {
-    max-width: unset !important;
+  .gl-table-layout-fixed {
+    table-layout: unset !important;
   }
 ` );
 
@@ -147,13 +122,7 @@ if (window.location.href.indexOf("https://github.com") > -1) {
     .col-lg-8 {
       width: 84.44444444% !important;
     }
-    .container-lg {
-      max-width: unset !important;
-    }
-    .container-md {
-      max-width: unset !important;
-    }
-    .container-xl {
+    .container-lg, .container-md, .container-xl {
       max-width: unset !important;
     }
   ` );
@@ -175,12 +144,7 @@ if (window.location.href.indexOf("https://notabug.org") > -1) {
     .ui.secondary.menu {
       margin-right: 7px !important;
     }
-    div#header-div.following.bar.light div.ui.container {
-      margin-left: 1em !important;
-      margin-right: 1em !important;
-      width: unset !important;
-    }
-    div.repository.file.list div.ui.container {
+    div#header-div.following.bar.light div.ui.container, div.repository.file.list div.ui.container {
       margin-left: 1em !important;
       margin-right: 1em !important;
       width: unset !important;
@@ -201,13 +165,7 @@ if (window.location.href.indexOf("https://archive.org") > -1) {
 //itch.io
 if (window.location.href.indexOf("itch.io") > -1) {
   GM_addStyle (`
-    .above_game_banner_inner, .goal_banner_inner {
-      max-width: unset !important;
-    }
-    .community_post_list_widget .community_post .post_body {
-      max-width: unset !important;
-    }
-    .game_comments_widget .post_form {
+    .above_game_banner_inner, .community_post_list_widget .community_post .post_body, .game_comments_widget .post_form, .goal_banner_inner {
       max-width: unset !important;
     }
     .responsive .inner_column {
@@ -238,15 +196,10 @@ if (window.location.href.indexOf("kde.org") > -1) {
 //Kuribo64
 if (window.location.href.indexOf("kuribo64.net") > -1) {
   GM_addStyle (`
-    #container {
+    #container, body {
       margin-left: 1em !important;
       margin-right: 1em !important;
       max-width: unset !important;
-    }
-    body {
-      margin-left: 1em !important;
-      margin-right: 1em !important;
-      max-width: unset !Important;
     }
     div.faq.outline.margin {
       height: unset !important;
@@ -278,16 +231,7 @@ if (window.location.href.indexOf("http://lightspark.github.io") > -1) {
 //Linuxize
 if (window.location.href.indexOf("https://linuxize.com") > -1) {
   GM_addStyle (`
-    .max-w-article {
-      max-width: unset !important;
-    }
-    .max-w-3xl {
-      max-width: unset !important;
-    }
-    .max-w-5xl {
-      max-width: unset !important;
-    }
-    div.w-full.post-width.mx-auto.px-6 {
+    .max-w-article, .max-w-3xl, .max-w-5xl, div.w-full.post-width.mx-auto.px-6 {
       max-width: unset !important;
     }
   ` );
@@ -296,8 +240,12 @@ if (window.location.href.indexOf("https://linuxize.com") > -1) {
 //LinuxStoney
 if (window.location.href.indexOf("https://linuxstoney.com") > -1) {
   GM_addStyle (`
-    .mh-container, .mh-container-inner {
+    .mh-container {
       max-width: unset !important;
+    }
+    img {
+      height: auto !important;
+      width: 100% !important;
     }
   ` );
 }
@@ -311,17 +259,11 @@ if (window.location.href.indexOf("wiki") > -1) {
       margin-top: 3em !important;
       max-width: unset !important;
     }
-    .mw-article-toolbar-container {
-      max-width: unset !important;
-    }
-    .mw-content-container {
+    #p-search > div > #searchform, #p-search .wvui-typeahead-search, .mw-article-toolbar-container, .mw-content-container, .pcgw-header-_limit {
       max-width: unset !important;
     }
     .page-Home .home-information-column {
       max-width: 31% !important;
-    }
-    .pcgw-header_limit {
-      max-width: unset !important;
     }
   ` );
 }
@@ -329,21 +271,18 @@ if (window.location.href.indexOf("wiki") > -1) {
 //MyAnimeList
 if (window.location.href.indexOf("https://myanimelist.net") > -1) {
   GM_addStyle (`
-    #widget-episode-video {
+    #widget-episode-video, .list-unit .list-status-title, .status-menu-container, .widget-slide-block, .widget-slide-block .widget-slide-outer, div.wrapper div#contentWrapper div#content table#dialog {
       width: 100% !important;
     }
     .anime-slide.js-anime-slide {
       text-align: center !important;
       width: unset !important;
     }
-    .anime-slide-block {
+    .anime-slide-block, .anime-slide-outer, .detail-stack-block .column-item .detail, .forum .forum-board .topics .topic-title, .forum .forum-board-list, .forum .forum-mods-list, .forum .forum-side-block .forum-side-list .forum-post .information-block, .list-unit, .manga-store .main-right, .news-list .comment-list, .news-list .news-unit, .page-advertising #ad_menu, .page-common #menu, .page-common .content-container .container-left, .profile .user-profile-about, .ranking-digest .ranking-unit .title, .status-menu-container .search-container #search-box.open, body.news .content-left, body.page-forum.page-common div#myanimelist div.wrapper div#contentWrapper div#content div, td.borderClass div {
       width: unset !important;
     }
     .anime-slide-block .anime-slide .btn-anime {
       float: unset !important;
-    }
-    .anime-slide-outer {
-      width: unset !important;
     }
     .btn-favmore {
       background-position: 50% 12px !important;
@@ -352,9 +291,6 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     .detail-stack-block .column-item {
       width: 32% !important;
     }
-    .detail-stack-block .column-item .detail {
-      width: unset !important;
-    }
     .forum .content-container .container-left {
       padding-right: 10px !important;
       width: unset !important;
@@ -362,74 +298,30 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     .forum .forum-board .board {
       width: 55% !important;
     }
-    .forum .forum-board .topics {
+    .forum .forum-board .topics, div:nth-child(1).di-tc.va-t, div:nth-child(3).di-tc.va-t {
       width: 45% !important;
-    }
-    .forum .forum-board .topics .topic-title {
-      width: unset !important;
     }
     .forum .forum-board .topics .topic-title .topic-title-link {
       white-space: unset !important;
     }
-    .forum .forum-board-list {
-      width: unset !important;
-    }
-    .forum .forum-mods .link-forum-mods:first-of-type {
+    .forum .forum-mods .link-forum-mods:first-of-type, .forum .forum-mods .link-forum-mods:nth-of-type(10n) {
       padding-left: 12px !important;
-    }
-    .forum .forum-mods .link-forum-mods:nth-of-type(10n) {
-      padding-right: 12px !important;
     }
     .forum .forum-mods-container {
       display: block ruby !important;
       width: unset !important;
     }
-    .forum .forum-mods-list {
-      width: unset !important
-    }
-    .forum .forum-side-block .forum-side-list .forum-post .information-block {
-      width: unset !important;
-    }
-    .header {
+    .header, .page-common #myanimelist {
       margin-left: 1em !important;
       margin-right: 1em !important;
       width: unset !important;
     }
-    .left-column.fl-l.divider{
-      width: 49% !important;
-    }
-    .left-right.fl-r {
+    .left-column.fl-l.divider, .left-right.fl-r {
       width: 49% !important;
     }
     .list-container {
       margin-left: 5em !important;
       margin-right: 1em !important;
-      width: unset !important;
-    }
-    .list-unit {
-      width: unset !important;
-    }
-    .list-unit .list-status-title {
-      width: 100% !important;
-    }
-    .manga-store .main-right {
-      width: unset !important;
-    }
-    .news-list .comment-list, .news-list .news-unit {
-      width: unset !important;
-    }
-    .page-advertising #ad_menu {
-      width: unset !important;
-    }
-    .page-common #menu {
-      width: unset !important;
-    }
-    .page-common #myanimelist {
-      margin-left: 1em !important;
-      margin-right: 1em !important;
-      width: unset !important;
-    }
-    .page-common .content-container .container-left {
       width: unset !important;
     }
     .page-common .h1.edit-info {
@@ -443,67 +335,46 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
       display: inline-block !important;
       width: unset !important;
     }
-    .profile .user-profile-about {
-      width: unset !important;
-    }
     .ranking-digest .ranking-unit {
       width: 97% ! important;
     }
-    .ranking-digest .ranking-unit .title {
-      width: unset !important;
-    }
-    .recommendations-user-recs-text {
+    .recommendations-user-recs-text, body.index .widget-container .widget.reviews.left .textReadability {
       max-width: unset !important
-    }
-    .status-menu-container {
-      width: 100% !important;
-    }
-    .status-menu-container .search-container #search-box.open {
-      width: unset !important;
-    }
-    .widget-slide-block {
-      width: 100% !important;
-    }
-    .widget-slide-block .widget-slide-outer {
-      width: 100% !important;
     }
     .widget.mxj .widget-content a {
       margin-right: 0px !important;
       width: 37% !important;
     }
-    body.index .widget-container .widget.reviews.left .textReadability {
-      max-width: unset !important;
-    }
-    body.news .content-left {
-      width: unset !important;
-    }
-    body.page-forum.page-common div#myanimelist div.wrapper div#contentWrapper div#content div {
-      width: unset !important;
-    }
     div.forum-board {
       width: -moz-available !important;
     }
-    div.wrapper div#contentWrapper div#content table#dialog {
-      width: 100% !important;
-    }
-    div:nth-child(1).di-tc.va-t {
-      width: 49% !important;
-    }
     div:nth-child(2).di-tc.va-t {
       width: 2% !important;
-    }
-    div:nth-child(3).di-tc.va-t {
-      width: 49% !important;
     }
     img.lazyloaded:nth-child(3) {
       width: -moz-available !important;
       height: auto !important;
     }
-    td.borderClass div {
-      width: unset !important;
-    }
     textarea.textarea {
       width: 99% !important;
+    }
+  ` );
+}
+
+//Nyaa
+if (window.location.href.indexOf("nyaa.si") > -1) {
+  GM_addStyle (`
+    .container {
+      width: unset !important;
+    }
+  ` );
+}
+
+//Patreon
+if (window.location.href.indexOf("https://www.patreon.com") > -1) {
+  GM_addStyle (`
+    .cXIukT {
+      max-width: unset !important;
     }
   ` );
 }
@@ -549,6 +420,31 @@ if (window.location.href.indexOf("file://") > -1) {
   ` );
 }
 
+//SourceForge
+if (window.location.href.indexOf("https://sourceforge.net") > -1) {
+  GM_addStyle (`
+    #comment .comment-row {
+      float: unset !important;
+    }
+    .grid-16 {
+      float: unset !important;
+      margin: 0 10px 0 110px !important;
+    }
+    .pad, div.grid-16.post-content.bubble {
+      width: -moz-available !important;
+    }
+    .sandiego_chrome #page-body {
+      width: unset !important;
+    }
+    .sandiego_chrome.legacy_chrome .sandiego .header .row, .sandiego_chrome.legacy_chrome .sandiego.l-header-nav .row, .sandiego_chrome.legacy_chrome footer.sandiego .row {
+      max-width: unset !important;
+    }
+    div.grid-2.tcenter.gravatar {
+      position: absolute !important;
+    }
+  ` );
+}
+
 //Steam
 /* TODO: Steam has multiple domains, inculding steamcommunity.com and store.steampowered.com.
  * I know it sounds ridiculous, but I literally have no idea how to let this thing accept multiple domains without pointlessly duplicating the code.
@@ -561,13 +457,10 @@ if (window.location.href.indexOf("file://") > -1) {
  * Due to the issues, this is currently disabled by default outside of steamcommunity.com. */
 if (window.location.href.indexOf("https://steamcommunity.com") > -1) {
   GM_addStyle (`
-    #footer .footer_content {
+    #footer .footer_content, .maincontent, div#global_header .content, div.page_content {
       width: unset !important;
     }
-    .apphub_Content {
-      max-width: unset !important;
-    }
-    .apphub_HomeHeader {
+    .apphub_Content, .apphub_HomeHeader {
       max-width: unset !important;
     }
     .apphub_HomeHeaderContent {
@@ -583,10 +476,10 @@ if (window.location.href.indexOf("https://steamcommunity.com") > -1) {
       margin-right: 16px !important;
       width: unset !important;
     }
-    .maincontent {
-      width: unset !important;
+    .pagecontent {
+      padding-bottom: unset !important;
     }
-    .queue_ctn {
+    .queue_ctn, body.v6 .page_content {
       margin-left: 16px !important;
       margin-right: 16px !important;
       width: unset !important;
@@ -594,13 +487,9 @@ if (window.location.href.indexOf("https://steamcommunity.com") > -1) {
     .review_box .rightcol {
       width: -moz-available !important;
     }
-    body.v6 .page_content {
-      margin-left: 16px !important;
-      margin-right: 16px !important;
-      width: unset !important;
-    }
-    div#global_header .content {
-      width: unset !important;
+    body.flat_page #footer_spacer, body.headerless_page #footer_spacer {
+      height: unset !important;
+      padding-top: unset !important;
     }
     div#nextInDiscoveryQueue.next_in_queue_area {
       margin-right: 32px !important;
@@ -610,19 +499,6 @@ if (window.location.href.indexOf("https://steamcommunity.com") > -1) {
     }
     div.maincontent {
       display: flex !important;
-    }
-    div.page_content {
-      width: unset !important;
-    }
-
-    /* This hides a gap that appears right above the footer. The gap does not appear to be caused by Margin Remover at all, though.
-     * Not sure if it was intended to appear. Surely not, right? Either way, it's technically a margin and it's ugly as hell.*/
-    .pagecontent {
-      padding-bottom: unset !important;
-    }
-    body.flat_page #footer_spacer, body.headerless_page #footer_spacer {
-      height: unset !important;
-      padding-top: unset !important;
     }
   ` );
 }
@@ -663,21 +539,6 @@ if (window.location.href.indexOf("https://w3techs.com") > -1) {
   GM_addStyle (`
     td.tech_main {
       width: unset !important;
-    }
-  ` );
-}
-
-//WordPress
-/* TODO: Matching the URL isn't good enough here, since we want this to work on every WordPress site. Or do we?
- * Depending on how customizable WordPress is, a case-by-case approach for every site may be necessary.
- * Something to figure out whenever I stumble upon another WordPress site.*/
-if (window.location.href.indexOf("https://pointieststick.com") > -1) {
-  GM_addStyle (`
-    .content-wrapper {
-      max-width: unset !important;
-    }
-    .has-sidebar .site-main {
-      max-width: unset !important;
     }
   ` );
 }
