@@ -16,6 +16,15 @@ if (window.location.href.indexOf("https://pointieststick.com") > -1) {
   ` );
 }
 
+//benkuhn.net
+if (window.location.href.indexOf("https://www.benkuhn.net") > -1) {
+  GM_addStyle (`
+    .center {
+      max-width: unset !important;
+    }
+  ` );
+}
+
 //Bugzilla
 //TODO: Matching the URL isn't good enough here, since we want this to work on every Bugzilla site. Something to figure out later.
 if (window.location.href.indexOf("https://bugs.winehq.org") > -1) {
@@ -44,9 +53,20 @@ if (window.location.href.indexOf("https://beta.crunchyroll.com") > -1) {
 }
 
 //Dolphin Emulator
-if (window.location.href.indexOf("https://dolphin-emu.org/") > -1) {
+if (window.location.href.indexOf("https://dolphin-emu.org") > -1) {
   GM_addStyle (`
     .container {
+      width: unset !important;
+    }
+  ` );
+}
+
+//DokuWiki
+/* TODO: Matching the URL isn't good enough here, since we want this to work on every DokuWiki site. Something to figure out later.
+ * Right now, the filter is always active. Hopefully it won't cause any problems. */
+if (window.location.href.indexOf("https://www.xanmod.org") > -1) {
+  GM_addStyle (`
+    div#pagewrap, div.wrap_column.wrap__dark.plugin_wrap {
       width: unset !important;
     }
   ` );
@@ -264,6 +284,18 @@ if (window.location.href.indexOf("wiki") > -1) {
     }
     .page-Home .home-information-column {
       max-width: 31% !important;
+    }
+  ` );
+}
+
+//Medium
+if (window.location.href.indexOf("medium.com") > -1) {
+  GM_addStyle (`
+    .n {
+      max-width: unset !important;
+    }
+    .fh {
+      max-width: unset !important;
     }
   ` );
 }
