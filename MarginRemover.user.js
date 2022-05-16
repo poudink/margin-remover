@@ -7,6 +7,15 @@
 // @description Remove stupid margins.
 // ==/UserScript==
 
+//Adam Szopa
+if (window.location.href.indexOf("https://szopa.org.pl") > -1) {
+  GM_addStyle (`
+    .wrapper {
+      max-width: unset !important;
+    }
+  ` );
+}
+
 //Adventures in Linux and KDE
 if (window.location.href.indexOf("https://pointieststick.com") > -1) {
   GM_addStyle (`
@@ -203,12 +212,34 @@ if (window.location.href.indexOf("itch.io") > -1) {
 //KDE
 if (window.location.href.indexOf("kde.org") > -1) {
   GM_addStyle (`
-    .container-xl, .container-lg, .container-md, .container-sm, .container {
+    #contentBody, .container-xl, .container-lg, .container-md, .container-sm, .container {
       max-width: unset !important;
+    }
+    .container, .navbar.navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+      width: unset !important;
+    }
+    .span12 {
+      width: 100vw !important;
     }
     div.container.my-4.p-0 {
       padding-left: 3rem !important;
       padding-right: 1rem !important;
+    }
+  ` );
+}
+
+//Kurena Forum
+//TODO: Matching the URL isn't good enough here, since we want this to work on every Kurena Forum site. Something to figure out later.
+if (window.location.href.indexOf("https://openttd.btpro.nl") > -1) {
+  GM_addStyle (`
+    #bottom, #centercontent_bg, #wrapper {
+      width: unset !important;
+    }
+    #header {
+      aspect-ratio: 192 / 25 !important;
+      background-repeat: round !important;
+      height: unset !important;
+      width: 100% !important;
     }
   ` );
 }
@@ -432,14 +463,14 @@ if (window.location.href.indexOf("https://www.phoronix.com") > -1) {
       max-width: unset !important;
       width: unset !important;
     }
+    #footer-content, .wcontainer {
+      width: unset !important;
+    }
     #outer-wrapper {
       margin: unset !important;
     }
     .b-top-menu__background {
       padding: unset !important;
-    }
-    .wcontainer {
-      width: unset !important;
     }
   ` );
 }
@@ -448,6 +479,15 @@ if (window.location.href.indexOf("https://www.phoronix.com") > -1) {
 if (window.location.href.indexOf("https://pkgs.org/") > -1) {
   GM_addStyle (`
     .container, .container-lg, .container-md, .container-sm, .container-xl {
+      max-width: unset !important;
+    }
+  ` );
+}
+
+//Qt
+if (window.location.href.indexOf("https://www.qt.io") > -1) {
+  GM_addStyle (`
+    .b-article__container, .b-article__content article, body.qt-design-system .b-header__container {
       max-width: unset !important;
     }
   ` );
@@ -555,6 +595,21 @@ if (window.location.href.indexOf("https://steamcommunity.com") > -1) {
     }
     div.maincontent {
       display: flex !important;
+    }
+  ` );
+}
+
+//TechRadar
+if (window.location.href.indexOf("https://www.techradar.com") > -1) {
+  GM_addStyle (`
+    .trending-bar-container {
+      padding: unset !important;
+    }
+    body.limit-width .container.full {
+      max-width: unset !important;
+    }
+    body.limit-width .news-article, body.limit-width .static-article {
+      max-width: calc(100% - 300px) !important;
     }
   ` );
 }
