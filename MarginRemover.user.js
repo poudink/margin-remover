@@ -363,7 +363,7 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
       float: right !important;
       width: unset !important;
     }
-    .page-common .h1.edit-info span.h1-title, .page-common .h1.edit-info div.h1-title {
+    .page-common .h1.edit-info div.h1-title, .page-common .h1.edit-info span.h1-title {
       display: inline-block !important;
       width: unset !important;
     }
@@ -416,6 +416,30 @@ if (window.location.href.indexOf("https://pcsx2.net") > -1) {
   GM_addStyle (`
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
       max-width: unset !important;
+    }
+  ` );
+}
+
+//Phoronix
+if (window.location.href.indexOf("https://www.phoronix.com") > -1) {
+  GM_addStyle (`
+    #breadcrumbs, #channel-subtabbar, #channel-tabbar, #footer, #footer-copyright, #header, .b-top-menu__container, .breadcrumbs-wrapper, .notices {
+      max-width: unset !important;
+    }
+    #content {
+      border-left: unset !important;
+      border-right: unset !important;
+      max-width: unset !important;
+      width: unset !important;
+    }
+    #outer-wrapper {
+      margin: unset !important;
+    }
+    .b-top-menu__background {
+      padding: unset !important;
+    }
+    .wcontainer {
+      width: unset !important;
     }
   ` );
 }
