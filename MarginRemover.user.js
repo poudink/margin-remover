@@ -334,14 +334,14 @@ if (window.location.href.indexOf("medium.com") > -1) {
 //MyAnimeList
 if (window.location.href.indexOf("https://myanimelist.net") > -1) {
   GM_addStyle (`
-    #widget-episode-video, .list-unit .list-status-title, .status-menu-container, .widget-slide-block, .widget-slide-block .widget-slide-outer, div.wrapper div#contentWrapper div#content table#dialog {
+    #widget-episode-video, .list-unit .list-status-title, .status-menu-container, .widget-slide-block, .widget-slide-block .widget-slide-outer, div.di-t, div.wrapper div#contentWrapper div#content table#dialog {
       width: 100% !important;
     }
     .anime-slide.js-anime-slide {
       text-align: center !important;
       width: unset !important;
     }
-    .anime-slide-block, .anime-slide-outer, .detail-stack-block .column-item .detail, .forum .forum-board .topics .topic-title, .forum .forum-board-list, .forum .forum-mods-list, .forum .forum-side-block .forum-side-list .forum-post .information-block, .list-unit, .manga-store .main-right, .news-list .comment-list, .news-list .news-unit, .page-advertising #ad_menu, .page-common #menu, .page-common .content-container .container-left, .profile .user-profile-about, .ranking-digest .ranking-unit .title, .status-menu-container .search-container #search-box.open, body.news .content-left, body.page-forum.page-common div#myanimelist div.wrapper div#contentWrapper div#content div, td.borderClass div {
+    .anime-slide-block, .anime-slide-outer, .detail-stack-block .column-item .detail, .forum .forum-board .topics .topic-title, .forum .forum-board-list, .forum .forum-mods-list, .forum .forum-side-block .forum-side-list .forum-post .information-block, .list-unit, .manga-store .main-right, .news-list .comment-list, .news-list .news-unit, .page-advertising #ad_menu, .page-common #menu, .page-common .content-container .container-left, .profile .user-profile-about, .ranking-digest .ranking-unit .title, .stacks .recent-list .column-item p.text, .status-menu-container .search-container #search-box.open, body.news .content-left, body.page-forum.page-common div#myanimelist div.wrapper div#contentWrapper div#content div, td.borderClass div {
       width: unset !important;
     }
     .anime-slide-block .anime-slide .btn-anime {
@@ -353,6 +353,9 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     }
     .detail-stack-block .column-item {
       width: 32% !important;
+    }
+    .detail-user-recs-text, .recommendations-user-recs-text, body.index .widget-container .widget.reviews.left .textReadability {
+      max-width: unset !important
     }
     .forum .content-container .container-left {
       padding-right: 10px !important;
@@ -401,9 +404,6 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     .ranking-digest .ranking-unit {
       width: 97% ! important;
     }
-    .recommendations-user-recs-text, body.index .widget-container .widget.reviews.left .textReadability {
-      max-width: unset !important
-    }
     .widget.mxj .widget-content a {
       margin-right: 0px !important;
       width: 37% !important;
@@ -419,7 +419,7 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
       height: auto !important;
     }
     textarea.textarea {
-      width: 99% !important;
+      width: calc(100% - 8px) !important;
     }
   ` );
 }
