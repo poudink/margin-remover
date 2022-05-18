@@ -42,8 +42,13 @@ if (window.location.href.indexOf("https://bugs.winehq.org") > -1) {
       width: -moz-available !important;
     }
     .bz_comment_text {
-      max-width: 85vw !important;
       width: unset !important;
+    }
+    .bz_comment_text, .uneditable_textarea, tbody.file pre {
+      overflow-wrap: anywhere !important;
+    }
+    .bz_comment_text span.quote {
+      white-space: unset !important;
     }
   ` );
 }
@@ -485,10 +490,41 @@ if (window.location.href.indexOf("https://pkgs.org/") > -1) {
 }
 
 //Qt
-if (window.location.href.indexOf("https://www.qt.io") > -1) {
+if (window.location.href.indexOf("qt.io") > -1) {
   GM_addStyle (`
-    .b-article__container, .b-article__content article, body.qt-design-system .b-header__container {
+    .b-article__container, .b-article__content article, .b-block__container, .b-collection__container, .b-header__container, .b-hero__container, .b-hero__search, .b-hero__textarea, .b-single-product__container, .container, body.qt-design-system .b-header__container, div.stamped-container[data-widget-style], div[data-widget-style] div.stamped-container {
       max-width: unset !important;
+    }
+  ` );
+}
+
+//Reddit
+/* This was only tested with the old Reddit layout. The new layout may not and probably does not work with this.
+ * Because old Reddit allowed subreddits to have custom CSS styling, it is possible that this filter will not work accross all subreddits.
+ * If this happens, some subreddit-specific filters may be necessary. */
+if (window.location.href.indexOf("https://www.reddit.com") > -1) {
+  GM_addStyle (`
+    #compose-message .roundfield select, .roundfield input[type="number"], .roundfield input[type="password"], .roundfield input[type="text"], .roundfield input[type="url"], .roundfield textarea, .submit-page #newlink.submit.content .tabmenu.formtab a {
+      width: -moz-available !important;
+    }
+    .formtabs-content, .markdownEditor-wrapper, .roundfield .usertext-edit, .submit-page .roundfield, .usertext .bottom-area {
+      width: unset !important;
+    }
+    .md, div.usertext-edit {
+      max-width: unset !important;
+    }
+    .submit-page #header-bottom-left {
+      left: unset !important;
+      margin-left: unset !important;
+    }
+    .submit-page #newlink.submit.content {
+      margin: 0 1em !important;
+      width: unset !important;
+    }
+    ul.tabmenu.formtab li {
+      display: inline-block !important;
+      text-align: center !important;
+      width: 50% !important;
     }
   ` );
 }
@@ -512,6 +548,15 @@ if (window.location.href.indexOf("file://") > -1) {
     #GameCanvas {
       height: 100vh !important;
       width: auto !important;
+    }
+  ` );
+}
+
+//Software Freedom Conservancy
+if (window.location.href.indexOf("https://sfconservancy.org") > -1) {
+  GM_addStyle (`
+    .mw8 {
+      max-width: unset !important;
     }
   ` );
 }
@@ -540,6 +585,18 @@ if (window.location.href.indexOf("https://sourceforge.net") > -1) {
     }
   ` );
 }
+
+//Stack Exchange
+/* TODO: Matching the URL isn't good enough here, since we want this to work on every Stack Exchange site. Something to figure out later.
+ * Right now, the filter is always active. Hopefully it won't cause any problems. */
+GM_addStyle (`
+  #content, .site-footer .site-footer--container, .site-footer .site-footer--extra, body > .container {
+    max-width: unset !important;
+  }
+  .s-topbar .s-topbar--container {
+    width: -moz-available !important;
+  }
+` );
 
 //Steam
 /* TODO: Steam has multiple domains, inculding steamcommunity.com and store.steampowered.com.
@@ -629,6 +686,15 @@ if (window.location.href.indexOf("theregister.com") > -1) {
     body:not(.timeless)[data-pagetype="Story"] #main-col #article-wrapper {
       max-width: unset !important;
       padding-left: 7em !important;
+    }
+  ` );
+}
+
+//The Verge
+if (window.location.href.indexOf("https://www.theverge.com") > -1) {
+  GM_addStyle (`
+    .l-wrapper {
+      max-width: unset !important;
     }
   ` );
 }
