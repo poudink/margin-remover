@@ -601,57 +601,53 @@ GM_addStyle (`
 //Steam
 /* TODO: Steam has multiple domains, inculding steamcommunity.com and store.steampowered.com.
  * I know it sounds ridiculous, but I literally have no idea how to let this thing accept multiple domains without pointlessly duplicating the code.
- * Looked up the OR operator, which is apparently ||. Tried using it multiple ways, didn't work.
- * Thankfully, this doesn't matter yet since the filter only works right on steamcommunity.com.
- * When this does start mattering, just matching "steam" will work, but not ideal since it'll also get actived on sites like "steamunlocked.net".
- * Hopefully I'll have figured out something better by then.
- * TODO: Make this work better on store.steampowered.com. This has a partial implementation, but it's going to need a lot more work.
- * May redo it from scratch, I have my doubts about the current approach.
- * Due to the issues, this is currently disabled by default outside of steamcommunity.com. */
-if (window.location.href.indexOf("https://steamcommunity.com") > -1) {
+ * Looked up the OR operator, which is apparently ||. Tried using it multiple ways, didn't work. Right now, we're just matching for "steam".*/
+if (window.location.href.indexOf("steam") > -1) {
   GM_addStyle (`
-    #footer .footer_content, .maincontent, div#global_header .content, div.page_content {
-      width: unset !important;
-    }
-    .apphub_Content, .apphub_HomeHeader {
+    .apphub_Content, .apphub_HomeHeaderContent {
+      margin: 0 16px !important;
       max-width: unset !important;
     }
-    .apphub_HomeHeaderContent {
-      margin-left: 16px !important;
-      margin-right: 16px !important;
+    .apphub_HomeHeader, .store_nav .search_area {
       max-width: unset !important;
     }
     .forum_op {
       background-size: cover !important;
       max-width: unset !important;
     }
-    .leftcol {
-      margin-right: 16px !important;
+    .maincontent, div#global_header .content {
       width: unset !important;
     }
     .pagecontent {
       padding-bottom: unset !important;
     }
-    .queue_ctn, body.v6 .page_content {
-      margin-left: 16px !important;
-      margin-right: 16px !important;
+    .queue_ctn, body.v6 .page_content, div#store_header .content {
+      margin: 0 16px !important;
       width: unset !important;
     }
     .review_box .rightcol {
-      width: -moz-available !important;
+      width: calc(100% - 28px);
+    }
+    .store_nav .search_flex_spacer {
+      flex: unset !important;
     }
     body.flat_page #footer_spacer, body.headerless_page #footer_spacer {
       height: unset !important;
       padding-top: unset !important;
     }
-    div#nextInDiscoveryQueue.next_in_queue_area {
-      margin-right: 32px !important;
+    div#game_highlights.block_content.page_content {
+      display: flex !important;
+      flex-direction: row-reverse !important;
     }
     div.leftcol {
-      float: unset !important;
+      margin-right: unset !important;
+      width: calc(100% - 322px) !important;
     }
     div.maincontent {
       display: flex !important;
+    }
+    div.rightcol.responsive_local_menu {
+      margin-left: 14px !important;
     }
   ` );
 }
