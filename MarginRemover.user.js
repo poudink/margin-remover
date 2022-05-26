@@ -35,9 +35,18 @@ if (window.location.href.indexOf("https://www.benkuhn.net") > -1) {
 }
 
 //Bugzilla
-//TODO: Matching the URL isn't good enough here, since we want this to work on every Bugzilla site. Something to figure out later.
-if (window.location.href.indexOf("https://bugs.winehq.org") > -1) {
+/* TODO: Matching the URL isn't good enough here, since we want this to work on every Bugzilla site. Something to figure out later.
+ * Right now, we're matching for a "bugs" bottom-level domain, which appears to be standard for bug trackers. */
+if (window.location.href.indexOf("https://bugs.") > -1) {
   GM_addStyle (`
+    #bugzilla-body {
+      margin: 8px 8px 8px auto !important;
+      max-width: unset !important;
+      width: calc(100% - 16px) !important;
+    }
+    #component_table, .bz_comment {
+      max-width: unset !important;
+    }
     .bz_comment_table {
       width: -moz-available !important;
     }
@@ -49,6 +58,18 @@ if (window.location.href.indexOf("https://bugs.winehq.org") > -1) {
     }
     .bz_comment_text span.quote {
       white-space: unset !important;
+    }
+  ` );
+}
+
+//Calligra
+if (window.location.href.indexOf("https://calligra.org") > -1) {
+  GM_addStyle (`
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .navbar, main.markdown-output blockquote, main.markdown-output div, main.markdown-output h1, main.markdown-output h2, main.markdown-output h3, main.markdown-output h4, main.markdown-output h5, main.markdown-output h6, main.markdown-output ol, main.markdown-output p, main.markdown-output ul {
+      max-width: unset !important;
+    }
+    main.markdown-output figure, main.markdown-output img {
+      width: unset !important;
     }
   ` );
 }
@@ -89,7 +110,7 @@ if (window.location.href.indexOf("https://www.xanmod.org") > -1) {
 //Epic Games Store
 if (window.location.href.indexOf("https://store.epicgames.com") > -1) {
   GM_addStyle (`
-    .css-s45c7f, .css-vomfqg {
+    .css-lai20k, .css-s45c7f, .css-vomfqg {
       max-width: unset !important;
     }
   ` );
@@ -111,17 +132,16 @@ if (window.location.href.indexOf("https://www.freecodecamp.org") > -1) {
   ` );
 }
 
-//GIMP
-//TODO: This filter literally doesn't do anything. I have no idea why. It should work, but it doesn't.
-if (window.location.href.indexOf("https://www.gimp.org") > -1) {
+//Gitea
+//Homepage
+if (window.location.href.indexOf("https://gitea.io") > -1) {
   GM_addStyle (`
-    .container, .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, .entry-content ol, .entry-content p, .entry-content ul, .page_content h1, .page_content h2, .page_content h3, .page_content h4, .page_content h5, .page_content h6, .page_content ol, .page_content p, .page_content ul {
-      max-width: unset !important;
+    .container {
+      max-width: calc(100% - 2em);
     }
   ` );
 }
-
-//Gitea
+//Software
 /* TODO: Matching the URL isn't good enough here, since we want this to work on every Gitea site. Something to figure out later.
  * Right now, the filter is always active. Hopefully it won't cause any problems. */
 GM_addStyle (`
@@ -504,7 +524,7 @@ if (window.location.href.indexOf("qt.io") > -1) {
  * If this happens, some subreddit-specific filters may be necessary. */
 if (window.location.href.indexOf("https://www.reddit.com") > -1) {
   GM_addStyle (`
-    #compose-message .roundfield select, .roundfield input[type="number"], .roundfield input[type="password"], .roundfield input[type="text"], .roundfield input[type="url"], .roundfield textarea, .submit-page #newlink.submit.content .tabmenu.formtab a {
+    #compose-message .roundfield select, .roundfield input[type="number"], .roundfield input[type="password"], .roundfield input[type="text"], .roundfield input[type="url"], .roundfield textarea, .submit-page #newlink.submit.content .tabmenu.formtab a, .usertext-edit textarea {
       width: -moz-available !important;
     }
     .formtabs-content, .markdownEditor-wrapper, .roundfield .usertext-edit, .submit-page .roundfield, .usertext .bottom-area {
@@ -608,8 +628,11 @@ if (window.location.href.indexOf("steam") > -1) {
       margin: 0 16px !important;
       max-width: unset !important;
     }
-    .apphub_HomeHeader, .store_nav .search_area {
+    .apphub_HomeHeader, .faqsharedviewpage_FAQViewPage_Ya530 .faqsharedviewpage_Columns_HGDD2, .faqsharedviewpage_FAQViewPage_Ya530 .faqsharedviewpage_SupportTitle_2BcDf, .store_nav .search_area {
       max-width: unset !important;
+    }
+    .faqsharedviewpage_FAQViewPage_Ya530 .faqsharedviewpage_LeftCol_o2y9U {
+      max-width: calc(100% - 316px) !important;
     }
     .forum_op {
       background-size: cover !important;
@@ -690,6 +713,15 @@ if (window.location.href.indexOf("theregister.com") > -1) {
 if (window.location.href.indexOf("https://www.theverge.com") > -1) {
   GM_addStyle (`
     .l-wrapper {
+      max-width: unset !important;
+    }
+  ` );
+}
+
+//The XY Problem
+if (window.location.href.indexOf("https://xyproblem.info") > -1) {
+  GM_addStyle (`
+    #container {
       max-width: unset !important;
     }
   ` );
