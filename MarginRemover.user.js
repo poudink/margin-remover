@@ -578,7 +578,7 @@ if (window.location.href.indexOf("https://search.ononoki.org") > -1) {
   GM_addStyle (`
     #results {
       gap: unset !important;
-      grid-template-columns: unset !important;
+      grid-template-columns: 70vw 20vw !important;
       margin-left: calc(1.2rem + 30px) !important;
     }
     #search_header {
