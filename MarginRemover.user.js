@@ -572,6 +572,30 @@ if (window.location.href.indexOf("file://") > -1) {
   ` );
 }
 
+//SearX
+/* TODO: Matching the URL isn't good enough here, since we want this to work on every SearX site. Something to figure out later. */
+if (window.location.href.indexOf("https://search.ononoki.org") > -1) {
+  GM_addStyle (`
+    #results {
+      gap: unset !important;
+      grid-template-columns: unset !important;
+      margin-left: calc(1.2rem + 30px) !important;
+    }
+    #search_header {
+      padding-left: unset !important;
+    }
+    .result .content, .result .stat {
+      max-width: unset !important;
+    }
+    .search_box {
+      width: calc(100% - 1.2rem - 30px) !important;
+    }
+    .search_filters {
+      margin-left: calc(1.2rem + 30px) !important;
+    }
+  ` );
+}
+
 //Software Freedom Conservancy
 if (window.location.href.indexOf("https://sfconservancy.org") > -1) {
   GM_addStyle (`
