@@ -34,6 +34,18 @@ if (window.location.href.indexOf("https://www.benkuhn.net") > -1) {
   ` );
 }
 
+//betanews
+if (window.location.href.indexOf("https://betanews.com") > -1) {
+  GM_addStyle (`
+    #bd .wideCol {
+      width: calc(100% - 312px) !important;
+    }
+    #page {
+      width: unset !important;
+    }
+  ` );
+}
+
 //Bugzilla
 /* TODO: Matching the URL isn't good enough here, since we want this to work on every Bugzilla site. Something to figure out later.
  * Right now, we're matching for a "bugs" bottom-level domain, which appears to be standard for bug trackers. */
@@ -577,7 +589,6 @@ if (window.location.href.indexOf("file://") > -1) {
 if (window.location.href.indexOf("https://search.ononoki.org") > -1) {
   GM_addStyle (`
     #results {
-      gap: unset !important;
       grid-template-columns: 70vw 20vw !important;
       margin-left: calc(1.2rem + 30px) !important;
     }
