@@ -218,6 +218,16 @@ if (window.location.href.indexOf("https://notabug.org") > -1) {
   ` );
 }
 
+//GreasyFork
+if (window.location.href.indexOf("https://greasyfork.org") > -1) {
+  GM_addStyle (`
+    .width-constraint {
+      margin: auto 1em !important;
+      max-width: unset !important;
+    }
+  ` );
+}
+
 //Internet Archive
 //TODO: Exclude archive pages.
 if (window.location.href.indexOf("https://archive.org") > -1) {
@@ -585,24 +595,28 @@ if (window.location.href.indexOf("file://") > -1) {
 }
 
 //SearX
-/* TODO: Matching the URL isn't good enough here, since we want this to work on every SearX site. Something to figure out later. */
+// TODO: Matching the URL isn't good enough here, since we want this to work on every SearX site. Something to figure out later. 
 if (window.location.href.indexOf("https://search.ononoki.org") > -1) {
   GM_addStyle (`
     #results {
       grid-template-columns: 70vw 20vw !important;
-      margin-left: calc(1.2rem + 30px) !important;
+      margin-left: 30px !important;
     }
     #search_header {
+      column-gap: unset !important;
       padding-left: unset !important;
+    }
+    .autocomplete {
+      width: calc(100% - 7rem) !important; /*This is very bad and doesn't fit the width of the search bar in all situations at all. I need to find a better solution here.*/
     }
     .result .content, .result .stat {
       max-width: unset !important;
     }
     .search_box {
-      width: calc(100% - 1.2rem - 30px) !important;
+      width: calc(100% - 30px) !important;
     }
     .search_filters {
-      margin-left: calc(1.2rem + 30px) !important;
+      margin-left: 40px !important;
     }
   ` );
 }
@@ -650,6 +664,9 @@ GM_addStyle (`
   }
   .s-topbar .s-topbar--container {
     width: -moz-available !important;
+  }
+  body {
+    --s-full: unset !important;
   }
 ` );
 
