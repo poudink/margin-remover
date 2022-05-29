@@ -625,6 +625,7 @@ if (window.location.href.indexOf("https://www.reddit.com/r/kde") > -1) {
     }
   ` );
 }
+
 //rentry
 if (window.location.href.indexOf("https://rentry.co") > -1) {
   GM_addStyle (`
