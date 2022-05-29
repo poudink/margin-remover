@@ -381,15 +381,12 @@ if (window.location.href.indexOf("https://linuxstoney.com") > -1) {
 
 //MediaWiki
 /* TODO: Matching the URL isn't good enough here, since we want this to work on every MediaWiki site. Something to figure out later.
- * Right now, the filter is always active. Hopefully it won't cause any problems.
  * TODO: Can't widen PCGamingWiki's tables. */
+if (window.location.href.indexOf("wiki") > -1) {
 GM_addStyle (`
   #masthead {
     margin-top: 3em !important;
     max-width: unset !important;
-  }
-  #searchInput {
-    width: calc(100% - 5em) !important;
   }
   #p-search > div > #searchform, #p-search .wvui-typeahead-search, .mw-article-toolbar-container, .mw-content-container, .pcgw-header-_limit {
     max-width: unset !important;
@@ -398,6 +395,7 @@ GM_addStyle (`
     max-width: 31% !important;
   }
 ` );
+}
 
 //Medium
 if (window.location.href.indexOf("medium.com") > -1) {
