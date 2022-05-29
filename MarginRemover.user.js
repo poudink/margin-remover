@@ -650,7 +650,7 @@ if (window.location.href.indexOf("file://") > -1) {
 }
 
 //SearX
-// TODO: Matching the URL isn't good enough here, since we want this to work on every SearX site. Something to figure out later. 
+//TODO: Matching the URL isn't good enough here, since we want this to work on every SearX site. Something to figure out later. 
 if (window.location.href.indexOf("https://search.ononoki.org") > -1) {
   GM_addStyle (`
     #results {
@@ -662,7 +662,7 @@ if (window.location.href.indexOf("https://search.ononoki.org") > -1) {
       padding-left: unset !important;
     }
     .autocomplete {
-      width: calc(100% - 7rem) !important; /*This is very bad and doesn't fit the width of the search bar in all situations at all. I need to find a better solution here.*/
+      width: calc(100% - 2rem) !important;
     }
     .result .content, .result .stat {
       max-width: unset !important;
@@ -672,6 +672,14 @@ if (window.location.href.indexOf("https://search.ononoki.org") > -1) {
     }
     .search_filters {
       margin-left: 40px !important;
+    }
+  ` );
+}
+//Results
+if (window.location.href.indexOf("https://search.ononoki.org/search?q=") > -1) {
+  GM_addStyle (`
+    .autocomplete {
+      width: calc(100% - 7rem) !important;
     }
   ` );
 }
