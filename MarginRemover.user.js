@@ -25,6 +25,19 @@ if (window.location.href.indexOf("https://pointieststick.com") > -1) {
   ` );
 }
 
+//Baka-Updates Manga
+if (window.location.href.indexOf("https://www.mangaupdates.com/") > -1) {
+  GM_addStyle (`
+    .body_content {
+      max-width: unset !important;
+    }
+    .img-fluid, .mu-post-body img {
+      height: auto !important;
+      width: 100% !important;
+    }
+  ` );
+}
+
 //benkuhn.net
 if (window.location.href.indexOf("https://www.benkuhn.net") > -1) {
   GM_addStyle (`
@@ -218,6 +231,15 @@ if (window.location.href.indexOf("https://notabug.org") > -1) {
   ` );
 }
 
+//Google Accounts
+if (window.location.href.indexOf("https://accounts.google.com") > -1) {
+  GM_addStyle (`
+    .RAYh1e.qmmlRd {
+      width: calc(100% - 60px) !important;
+    }
+  ` );
+}
+
 //GreasyFork
 if (window.location.href.indexOf("https://greasyfork.org") > -1) {
   GM_addStyle (`
@@ -233,6 +255,15 @@ if (window.location.href.indexOf("https://greasyfork.org") > -1) {
 if (window.location.href.indexOf("https://archive.org") > -1) {
   GM_addStyle (`
     .container {
+      max-width: unset !important;
+    }
+  ` );
+}
+
+//It's Foss
+if (window.location.href.indexOf("https://itsfoss.com") > -1) {
+  GM_addStyle (`
+    .site-inner {
       max-width: unset !important;
     }
   ` );
@@ -350,21 +381,23 @@ if (window.location.href.indexOf("https://linuxstoney.com") > -1) {
 
 //MediaWiki
 /* TODO: Matching the URL isn't good enough here, since we want this to work on every MediaWiki site. Something to figure out later.
+ * Right now, the filter is always active. Hopefully it won't cause any problems.
  * TODO: Can't widen PCGamingWiki's tables. */
-if (window.location.href.indexOf("wiki") > -1) {
-  GM_addStyle (`
-    #masthead {
-      margin-top: 3em !important;
-      max-width: unset !important;
-    }
-    #p-search > div > #searchform, #p-search .wvui-typeahead-search, .mw-article-toolbar-container, .mw-content-container, .pcgw-header-_limit {
-      max-width: unset !important;
-    }
-    .page-Home .home-information-column {
-      max-width: 31% !important;
-    }
-  ` );
-}
+GM_addStyle (`
+  #masthead {
+    margin-top: 3em !important;
+    max-width: unset !important;
+  }
+  #searchInput {
+    width: calc(100% - 5em) !important;
+  }
+  #p-search > div > #searchform, #p-search .wvui-typeahead-search, .mw-article-toolbar-container, .mw-content-container, .pcgw-header-_limit {
+    max-width: unset !important;
+  }
+  .page-Home .home-information-column {
+    max-width: 31% !important;
+  }
+` );
 
 //Medium
 if (window.location.href.indexOf("medium.com") > -1) {
@@ -388,7 +421,7 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
       text-align: center !important;
       width: unset !important;
     }
-    .anime-slide-block, .anime-slide-outer, .detail-stack-block .column-item .detail, .forum .forum-board .topics .topic-title, .forum .forum-board-list, .forum .forum-mods-list, .forum .forum-side-block .forum-side-list .forum-post .information-block, .list-unit, .manga-store .main-right, .news-list .comment-list, .news-list .news-unit, .page-advertising #ad_menu, .page-common #menu, .page-common .content-container .container-left, .profile .user-profile-about, .ranking-digest .ranking-unit .title, .stacks .recent-list .column-item p.text, .status-menu-container .search-container #search-box.open, body.news .content-left, body.page-forum.page-common div#myanimelist div.wrapper div#contentWrapper div#content div, td.borderClass div {
+    .anime-slide-block, .anime-slide-outer, .detail-stack-block .column-item .detail, .forum .forum-board .topics .topic-title, .forum .forum-board-list, .forum .forum-mods-list, .forum .forum-side-block .forum-side-list .forum-post .information-block, .list-unit, .manga-store .main-right, .news-list .comment-list, .news-list .news-unit, .page-advertising #ad_menu, .page-common #menu, .page-common .content-container .container-left, .page-common .login-form-block, .page-common .social-login-block, .profile .user-profile-about, .ranking-digest .ranking-unit .title, .stacks .recent-list .column-item p.text, .status-menu-container .search-container #search-box.open, body.news .content-left, body.page-forum.page-common div#myanimelist div.wrapper div#contentWrapper div#content div, td.borderClass div {
       width: unset !important;
     }
     .anime-slide-block .anime-slide .btn-anime {
@@ -447,6 +480,9 @@ if (window.location.href.indexOf("https://myanimelist.net") > -1) {
     .page-common .h1.edit-info div.h1-title, .page-common .h1.edit-info span.h1-title {
       display: inline-block !important;
       width: unset !important;
+    }
+    .page-common .login-inputtext {
+      width: calc(100% - 16px) !important;
     }
     .ranking-digest .ranking-unit {
       width: 97% ! important;
