@@ -583,8 +583,14 @@ if (window.location.href.indexOf("https://www.reddit.com") > -1) {
     #compose-message .roundfield select, .roundfield input[type="number"], .roundfield input[type="password"], .roundfield input[type="text"], .roundfield input[type="url"], .roundfield textarea, .submit-page #newlink.submit.content .tabmenu.formtab a, .usertext-edit textarea {
       width: -moz-available !important;
     }
-    .formtabs-content, .markdownEditor-wrapper, .roundfield .usertext-edit, .submit-page .roundfield, .usertext .bottom-area {
-      width: unset !important;
+    #flair-field, #reddit-field, #text-field, #title-field, .formtabs-content > div:nth-child(7) > div:nth-child(1), div.submit_text.roundfield.enabled {
+      width: calc(100% - 20px) !important;
+    }
+    .formtabs-content {
+      width: calc(100% - 307px) !important;
+    }
+    .markdownEditor-wrapper, .roundfield .usertext-edit, .submit-page .roundfield, .usertext .bottom-area {
+      width: 100% !important;
     }
     .md, div.usertext-edit {
       max-width: unset !important;
@@ -592,10 +598,14 @@ if (window.location.href.indexOf("https://www.reddit.com") > -1) {
     .submit-page #header-bottom-left {
       left: unset !important;
       margin-left: unset !important;
+      right: unset !important
     }
     .submit-page #newlink.submit.content {
       margin: 0 1em !important;
       width: unset !important;
+    }
+    div.roundfield:nth-child(4) {
+      width: calc(100% - 327px) !important;
     }
     ul.tabmenu.formtab li {
       display: inline-block !important;
@@ -604,7 +614,17 @@ if (window.location.href.indexOf("https://www.reddit.com") > -1) {
     }
   ` );
 }
-
+//r/kde
+if (window.location.href.indexOf("https://www.reddit.com/r/kde") > -1) {
+  GM_addStyle (`
+    #flair-field, #reddit-field, #text-field, #title-field, .formtabs-content, .formtabs-content > div:nth-child(7) > div:nth-child(1), div.roundfield:nth-child(4), div.submit_text.roundfield.enabled {
+      width: -moz-available !important;
+    }
+    #title-field {
+      width: 100% !important;
+    }
+  ` );
+}
 //rentry
 if (window.location.href.indexOf("https://rentry.co") > -1) {
   GM_addStyle (`
@@ -830,6 +850,33 @@ if (window.location.href.indexOf("https://w3techs.com") > -1) {
   GM_addStyle (`
     td.tech_main {
       width: unset !important;
+    }
+  ` );
+}
+
+//Writings of RoadrunnerWMC
+if (window.location.href.indexOf("https://roadrunnerwmc.github.io/") > -1) {
+  GM_addStyle (`
+    .wrapper {
+      max-width: calc(100% - 60px) !important;
+    }
+  ` );
+}
+
+//xemu
+if (window.location.href.indexOf("https://xemu.app") > -1) {
+  GM_addStyle (`
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+      max-width: unset !important;
+    }
+  ` );
+}
+
+//xenia
+if (window.location.href.indexOf("https://xenia.jp") > -1) {
+  GM_addStyle (`
+    .wrapper {
+      max-width: calc(100% - 60px) !important;
     }
   ` );
 }
