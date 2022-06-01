@@ -287,14 +287,31 @@ if (window.location.href.indexOf("itch.io") > -1) {
   ` );
 }
 
+//KDAB
+if (window.location.href.indexOf("itch.io") > -1) {
+  GM_addStyle (`
+    .container {
+      width: unset !important;
+    }
+  ` );
+}
+
 //KDE
 if (window.location.href.indexOf("kde.org") > -1) {
   GM_addStyle (`
-    #contentBody, .container-xl, .container-lg, .container-md, .container-sm, .container {
+    #contentBody, .container-xl, .container-lg, .container-md, .container-sm, .container, .navbar, body.fluid-width #wrapper #container {
       max-width: unset !important;
     }
-    .container, .navbar.navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+    .container, .header, .navbar.navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
       width: unset !important;
+    }
+    .content {
+      left: unset !important;
+      margin-left: unset !important;
+      width: calc(100% - 36px) !important;
+    }
+    .span9 {
+      width: calc(100% - 330px) !important;
     }
     .span12 {
       width: 100vw !important;
@@ -404,6 +421,15 @@ if (window.location.href.indexOf("medium.com") > -1) {
       max-width: unset !important;
     }
     .fh {
+      max-width: unset !important;
+    }
+  ` );
+}
+
+//mGBA
+if (window.location.href.indexOf("https://mgba.io/") > -1) {
+  GM_addStyle (`
+    .page-content {
       max-width: unset !important;
     }
   ` );
@@ -614,7 +640,7 @@ if (window.location.href.indexOf("https://www.reddit.com") > -1) {
     }
   ` );
 }
-//r/kde
+//KDE
 if (window.location.href.indexOf("https://www.reddit.com/r/kde") > -1) {
   GM_addStyle (`
     #flair-field, #reddit-field, #text-field, #title-field, .formtabs-content, .formtabs-content > div:nth-child(7) > div:nth-child(1), div.roundfield:nth-child(4), div.submit_text.roundfield.enabled {
@@ -858,6 +884,35 @@ if (window.location.href.indexOf("https://violentmonkey.github.io") > -1) {
 if (window.location.href.indexOf("https://w3techs.com") > -1) {
   GM_addStyle (`
     td.tech_main {
+      width: unset !important;
+    }
+  ` );
+}
+
+//WordPress
+if (window.location.href.indexOf("wordpress.com") > -1) {
+  GM_addStyle (`
+    #branding {
+      aspect-ratio: 951 / 160 !important;
+      height: unset !important;
+      width: unset !important;
+    }
+    #page {
+      width: unset !important;
+    }
+    .site-image {
+      width: 100% !important;
+    }
+    .site-image > img:nth-child(1) {
+      height: auto !important;
+      width: 100% !important;
+    }
+  ` );
+}
+//iwakura productions
+if (window.location.href.indexOf("https://iwakuraproductions.wordpress.com") > -1) {
+  GM_addStyle (`
+    #content {
       width: unset !important;
     }
   ` );
