@@ -87,18 +87,6 @@ if (window.location.href.indexOf("https://bugs.") > -1) {
   ` );
 }
 
-//Calligra
-if (window.location.href.indexOf("https://calligra.org") > -1) {
-  GM_addStyle (`
-    .container, .container-lg, .container-md, .container-sm, .container-xl, .navbar, main.markdown-output blockquote, main.markdown-output div, main.markdown-output h1, main.markdown-output h2, main.markdown-output h3, main.markdown-output h4, main.markdown-output h5, main.markdown-output h6, main.markdown-output ol, main.markdown-output p, main.markdown-output ul {
-      max-width: unset !important;
-    }
-    main.markdown-output figure, main.markdown-output img {
-      width: unset !important;
-    }
-  ` );
-}
-
 //Crunchyroll (Beta)
 /* Limited to beta to avoid any potential breakage with the regular layout.
  * Could work fine with it for all I know (very unlikely), but I don't use it so I don't know.
@@ -184,14 +172,23 @@ GM_addStyle (`
 /* TODO: Matching the URL isn't good enough here, since we want this to work on every Gitea site. Something to figure out later.
  * Right now, the filter is always active. Hopefully it won't cause any problems. */
 GM_addStyle (`
-  .container-fluid.container-limited.limit-container-width .file-holder.readme-holder.limited-width-container .file-content, .container-limited.limit-container-width, .limit-container-width .commit-box, .limit-container-width .commit-ci-menu, .limit-container-width .detail-page-header, .limit-container-width .files-changed-inner, .limit-container-width .flash-container, .limit-container-width .info-well, .limit-container-width .limited-header-width, .limit-container-width .limited-width-notes, .limit-container-width .page-content-header {
+  #group-filter-form, .group-search {
+    width: 100% !important;
+  }
+  .container-fluid.container-limited.limit-container-width .file-holder.readme-holder.limited-width-container .file-content, .container-limited, .container-limited.limit-container-width, .header-content .header-search-new, .limit-container-width .commit-box, .limit-container-width .commit-ci-menu, .limit-container-width .detail-page-header, .limit-container-width .files-changed-inner, .limit-container-width .flash-container, .limit-container-width .info-well, .limit-container-width .limited-header-width, .limit-container-width .limited-width-notes, .limit-container-width .page-content-header {
     max-width: unset !important;
   }
   .content-wrapper {
     padding-bottom: unset !important;
   }
+  .gl-flex-grow-1 {
+    flex-grow: unset !important;
+  }
   .gl-table-layout-fixed {
     table-layout: unset !important;
+  }
+  .nav-controls {
+    width: calc(100% - 130px) !important;
   }
 ` );
 
@@ -252,9 +249,15 @@ if (window.location.href.indexOf("https://greasyfork.org") > -1) {
 
 //Internet Archive
 //TODO: Exclude archive pages.
-if (window.location.href.indexOf("https://archive.org") > -1) {
+if (window.location.href.indexOf("archive.org") > -1) {
   GM_addStyle (`
-    .container {
+    #footerHome {
+      max-width: fit-content !important;
+    }
+    #resultsUrl_filter > label:nth-child(1), .col-sm-6 {
+      width: 100% !important;
+    }
+    .container, .search-toolbar {
       max-width: unset !important;
     }
   ` );
@@ -297,12 +300,13 @@ if (window.location.href.indexOf("itch.io") > -1) {
 }
 
 //KDE
-if (window.location.href.indexOf("kde.org") > -1) {
+//TODO: No clue how to do an OR operator here, somehow. This would be needed so I could specifically target kde.org and calligra.org.
+if (window.location.href.indexOf(".org") > -1) {
   GM_addStyle (`
-    #contentBody, .container-xl, .container-lg, .container-md, .container-sm, .container, .navbar, body.fluid-width #wrapper #container {
+    #contentBody, .container-xl, .container-lg, .container-md, .container-sm, .container, .laptop-with-overlay, .navbar, body.fluid-width #wrapper #container, div.container:nth-child(2) > p:nth-child(2) {
       max-width: unset !important;
     }
-    .container, .header, .navbar.navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+    .container, .header, .navbar.navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container, div#header, section.openup p {
       width: unset !important;
     }
     .content {
@@ -315,6 +319,10 @@ if (window.location.href.indexOf("kde.org") > -1) {
     }
     .span12 {
       width: 100vw !important;
+    }
+    div#contents {
+      background-size: cover !important;
+      width: unset !important;
     }
     div.container.my-4.p-0 {
       padding-left: 3rem !important;
@@ -370,6 +378,15 @@ if (window.location.href.indexOf("http://lightspark.github.io") > -1) {
     .content .span10, .content .span4 {
       max-width: unset !important;
       min-height: unset !important;
+    }
+  ` );
+}
+
+//LinuxLinks
+if (window.location.href.indexOf("https://www.linuxlinks.com") > -1) {
+  GM_addStyle (`
+    .site {
+      max-width: unset !important;
     }
   ` );
 }
@@ -543,8 +560,17 @@ if (window.location.href.indexOf("nyaa.si") > -1) {
 //Patreon
 if (window.location.href.indexOf("https://www.patreon.com") > -1) {
   GM_addStyle (`
-    .cXIukT {
+    .buwRTS {
+      grid-template-columns: max-content auto !important;
+    }
+    .cXIukT, .eeoXbT, .fUQhZo {
       max-width: unset !important;
+    }
+    .evlNRL, .fRFrlQ, .gkocLM, .gYZgJO, .jsfYtL, .nbmdzp-0 > header:nth-child(1) > div:nth-child(2) {
+      width: 100% !important;
+    }
+    .nbmdzp-0 > header:nth-child(1) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(1) {
+      width: calc(100% - 200px) !important;
     }
   ` );
 }
@@ -611,6 +637,12 @@ if (window.location.href.indexOf("https://www.reddit.com") > -1) {
     }
     #flair-field, #reddit-field, #text-field, #title-field, .formtabs-content > div:nth-child(7) > div:nth-child(1), div.submit_text.roundfield.enabled {
       width: calc(100% - 20px) !important;
+    }
+    #newlink-flair-dropdown {
+      left: unset !important;
+      margin-left: 20px !important;
+      margin-right: 20px !important;
+      width: unset !important;
     }
     .formtabs-content {
       width: calc(100% - 307px) !important;
@@ -864,6 +896,24 @@ if (window.location.href.indexOf("https://xyproblem.info") > -1) {
   GM_addStyle (`
     #container {
       max-width: unset !important;
+    }
+  ` );
+}
+
+//Twitter
+if (window.location.href.indexOf("https://twitter.com") > -1) {
+  GM_addStyle (`
+    .r-rthrr5 {
+      width: 100% !important;
+    }
+    .r-1ye8kvj, .r-sb58tz {
+      max-width: unset !important;
+    }
+    div.css-1dbjc4n.r-kemksi.r-1kqtdi0.r-1ljd8xs.r-13l2t4g.r-1phboty.r-1jgb5lz.r-11wrixw.r-61z16t.r-1ye8kvj.r-13qz1uu.r-184en5c {
+      max-width: calc(100% - 350px) !important;
+    }
+    header.css-1dbjc4n {
+      flex-grow: 0 !important;
     }
   ` );
 }
