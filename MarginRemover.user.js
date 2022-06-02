@@ -198,8 +198,16 @@ if (window.location.href.indexOf("https://github.com") > -1) {
     .col-lg-8 {
       width: 84.44444444% !important;
     }
-    .container-lg, .container-md, .container-xl {
+    .container-lg, .container-md, .container-xl, .header-search {
       max-width: unset !important;
+    }
+    .gutter-lg {
+      margin-right: unset !important;
+    }
+    body {
+      margin-bottom: 0px !important;
+      margin-left: 0px !important;
+      margin-top: 0px !important;
     }
   ` );
 }
