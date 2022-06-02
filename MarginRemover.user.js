@@ -61,22 +61,30 @@ if (window.location.href.indexOf("https://betanews.com") > -1) {
 
 //Bugzilla
 /* TODO: Matching the URL isn't good enough here, since we want this to work on every Bugzilla site. Something to figure out later.
- * Right now, we're matching for a "bugs" bottom-level domain, which appears to be standard for bug trackers. */
-if (window.location.href.indexOf("https://bugs.") > -1) {
+ * Right now, we're matching for a bottom-level domain that starts with "bug", so we can get a match with "bugzilla" as well as "bugs".
+ * While "bugs" appears to be standard, Mozilla's own bug tracker uses "bugzilla". */
+if (window.location.href.indexOf("https://bug") > -1) {
   GM_addStyle (`
+    #bottom-actions, #component_table, #main-inner, .bz_comment {
+      max-width: unset !important;
+    }
     #bugzilla-body {
-      margin: 8px 8px 8px auto !important;
+      margin-left: 8px !important;
+      margin-bottom: 8px !important;
       max-width: unset !important;
       width: calc(100% - 16px) !important;
     }
-    #component_table, .bz_comment {
-      max-width: unset !important;
+    #header .inner, .bz_comment_text {
+      width: unset !important;
+    }
+    #header .inner > * {
+      flex: unset !important;
+    }
+    #header .searchbox-outer, #header-search {
+      width: 100% !important;
     }
     .bz_comment_table {
       width: -moz-available !important;
-    }
-    .bz_comment_text {
-      width: unset !important;
     }
     .bz_comment_text, .uneditable_textarea, tbody.file pre {
       overflow-wrap: anywhere !important;
@@ -216,6 +224,15 @@ if (window.location.href.indexOf("https://www.gloriouseggroll.tv") > -1) {
   ` );
 }
 
+//GOG.com
+if (window.location.href.indexOf("https://www.gog.com") > -1) {
+  GM_addStyle (`
+    .footer-microservice-content, .form[data-v-0d80e231], .menu__container {
+      max-width: unset !important;
+    }
+  ` );
+}
+
 //Gogs
 //TODO: Matching the URL isn't good enough here, since we want this to work on every Gogs site. Something to figure out later.
 if (window.location.href.indexOf("https://notabug.org") > -1) {
@@ -313,7 +330,7 @@ if (window.location.href.indexOf(".org") > -1) {
       left: unset !important;
       margin-left: unset !important;
     }
-    .header, .navbar.navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container, div#header, main.markdown-output figure, main.markdown-output img {
+    .header, .navbar.navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container, main.markdown-output figure, main.markdown-output img {
       width: unset !important;
     }
     .span9 {
@@ -340,11 +357,50 @@ if (window.location.href.indexOf("https://blogs.kde.org") > -1) {
     }
   ` );
 }
+//Peruse
+if (window.location.href.indexOf("https://peruse.kde.org") > -1) {
+  GM_addStyle (`
+    div#header {
+      width: unset !important;
+    }
+  ` );
+}
 //The KDE Education Project
 if (window.location.href.indexOf("https://edu.kde.org") > -1) {
   GM_addStyle (`
     .content {
       width: calc(100% - 36px) !important;
+    }
+  ` );
+}
+
+//Know Your Memes
+if (window.location.href.indexOf("https://knowyourmeme.com") > -1) {
+  GM_addStyle (`
+    #leaderboard > ul:nth-child(1), #navigation-links, #trending-bar {
+      text-align: center !important;
+    }
+    #mast, .popular-links, article.entry .entry-editors, article.entry .narrow-section {
+      max-width: unset !important;
+    }
+    #search, .cols #content, .cols.entries_show #maru, .floating-bar, .wrap {
+      width: calc(100% - 32px) !important;
+    }
+    .cols #maru {
+      max-width: unset !important;
+      width: calc(100% - 310px - 1em) !important;
+    }
+    article.entry .entry-sections-container {
+      grid-template-columns: unset !important;
+    }
+    body.cols.guest.photos.photos_show.production div#content.x_brb6.c {
+      width: calc(100% - 2rem) !important;
+    }
+    h5.left {
+      float: unset !important;
+    }
+    table.entry_list, table.photo_list, table.user_list, table.video_list {
+      margin: auto !important;
     }
   ` );
 }
