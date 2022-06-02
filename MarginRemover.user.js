@@ -204,11 +204,6 @@ if (window.location.href.indexOf("https://github.com") > -1) {
     .gutter-lg {
       margin-right: unset !important;
     }
-    body {
-      margin-bottom: 0px !important;
-      margin-left: 0px !important;
-      margin-top: 0px !important;
-    }
   ` );
 }
 
@@ -311,16 +306,15 @@ if (window.location.href.indexOf("itch.io") > -1) {
 //TODO: No clue how to do an OR operator here, somehow. This would be needed so I could specifically target kde.org and calligra.org.
 if (window.location.href.indexOf(".org") > -1) {
   GM_addStyle (`
-    #contentBody, .container-xl, .container-lg, .container-md, .container-sm, .container, .laptop-with-overlay, .navbar, body.fluid-width #wrapper #container, div.container:nth-child(2) > p:nth-child(2) {
+    #contentBody, .container, .container-lg, .container-md, .container-sm, .container-xl, .laptop-with-overlay, .navbar, body.fluid-width #wrapper #container, div.container:nth-child(2) > p:nth-child(2), main.markdown-output blockquote, main.markdown-output div, main.markdown-output h1, main.markdown-output h2, main.markdown-output h3, main.markdown-output h4, main.markdown-output h5, main.markdown-output h6, main.markdown-output ol, main.markdown-output p, main.markdown-output ul, section.openup p {
       max-width: unset !important;
-    }
-    .container, .header, .navbar.navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container, div#header, section.openup p {
-      width: unset !important;
     }
     .content {
       left: unset !important;
       margin-left: unset !important;
-      width: calc(100% - 36px) !important;
+    }
+    .header, .navbar.navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container, div#header, main.markdown-output figure, main.markdown-output img {
+      width: unset !important;
     }
     .span9 {
       width: calc(100% - 330px) !important;
@@ -335,6 +329,22 @@ if (window.location.href.indexOf(".org") > -1) {
     div.container.my-4.p-0 {
       padding-left: 3rem !important;
       padding-right: 1rem !important;
+    }
+  ` );
+}
+//Blogs
+if (window.location.href.indexOf("https://blogs.kde.org") > -1) {
+  GM_addStyle (`
+    .container {
+      width: unset !important;
+    }
+  ` );
+}
+//The KDE Education Project
+if (window.location.href.indexOf("https://edu.kde.org") > -1) {
+  GM_addStyle (`
+    .content {
+      width: calc(100% - 36px) !important;
     }
   ` );
 }
@@ -619,8 +629,11 @@ if (window.location.href.indexOf("https://www.phoronix.com") > -1) {
 //pkgs.org
 if (window.location.href.indexOf("https://pkgs.org/") > -1) {
   GM_addStyle (`
-    .container, .container-lg, .container-md, .container-sm, .container-xl {
+    #searchform, .container, .container-lg, .container-md, .container-sm, .container-xl {
       max-width: unset !important;
+    }
+    .mr-auto, .mx-auto {
+      margin-right: unset !important;
     }
   ` );
 }
