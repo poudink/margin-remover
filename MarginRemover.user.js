@@ -375,20 +375,40 @@ if (window.location.href.indexOf("https://edu.kde.org") > -1) {
 }
 
 //Know Your Memes
+/* TEST PAGES - VERIFY FOR REGRESSION AFTER ANY CHANGES:
+ * https://knowyourmeme.com/memes/the-guy-who-killed-hitler */
 if (window.location.href.indexOf("https://knowyourmeme.com") > -1) {
   GM_addStyle (`
+    #content {
+      padding: unset !important;
+    }
     #leaderboard > ul:nth-child(1), #navigation-links, #trending-bar {
       text-align: center !important;
     }
-    #mast, .popular-links, article.entry .entry-editors, article.entry .narrow-section {
+    #mast {
       max-width: unset !important;
+      padding: 0 16px !important;
     }
-    #search, .cols #content, .cols.entries_show #maru, .floating-bar, .wrap {
+    #search, .cols.entries_show #maru, .floating-bar {
       width: calc(100% - 32px) !important;
+    }
+    #trending-bar {
+      display: block !important;
+      padding: 16px 0 !important;
+    }
+    .cols #content {
+      width: unset !important;
     }
     .cols #maru {
       max-width: unset !important;
       width: calc(100% - 310px - 1em) !important;
+    }
+    .popular-links {
+      display: block !important;
+      max-width: unset !important;
+    }
+    article.entry .entry-editors, article.entry .narrow-section {
+      max-width: unset !important;
     }
     article.entry .entry-sections-container {
       grid-template-columns: unset !important;
@@ -496,11 +516,14 @@ GM_addStyle (`
     margin-top: 3em !important;
     max-width: unset !important;
   }
-  #p-search > div > #searchform, #p-search .wvui-typeahead-search, .mw-article-toolbar-container, .mw-content-container, .pcgw-header-_limit {
+  #p-search > div > #searchform, #p-search .wvui-typeahead-search, .mw-article-toolbar-container, .mw-content-container, .pcgw-header_limit {
     max-width: unset !important;
   }
   .page-Home .home-information-column {
     max-width: 31% !important;
+  }
+  .page-Home div#body-content input[type="search"] {
+    width: calc(100% - 2em) !important;
   }
 ` );
 }
